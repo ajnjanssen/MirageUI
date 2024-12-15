@@ -10,7 +10,7 @@ interface SectionHeaderProps {
   headerText: string;
   headerSize?: number;
   headerColor?: keyof typeof TextColor;
-  subText: string;
+  subText?: string;
   textColor?: keyof typeof TextColor;
   textSize?: keyof typeof TextSize;
   textLeading?: keyof typeof TextLeading;
@@ -31,7 +31,7 @@ function SectionHeader({
     <>
       <Heading level={headerSize || 1} text={headerText} color={headerColor} />
       <Text
-        text={subText}
+        text={subText || ""}
         color={TextColor[textColor]}
         textSize={TextSize[textSize]}
         leading={TextLeading[textLeading]}
