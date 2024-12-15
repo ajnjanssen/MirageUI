@@ -1,20 +1,13 @@
 import React from "react";
+import { TextColor } from "@/app/enums/text/TextColor";
 
 interface IHeading {
   level: number;
   text: string;
-  color:
-    | "text-primary"
-    | "text-secondary"
-    | "text-base-content"
-    | "text-base-100"
-    | "text-base-200"
-    | "text-base-300"
-    | "text-warning"
-    | "text-error";
+  color?: keyof typeof TextColor;
 }
 
-function Heading({ level, text, color }: IHeading) {
+function Heading({ level, text, color = "Primary" }: IHeading) {
   const levelClass =
     [
       { level: 1, className: "text-6xl font-bold" },
@@ -27,7 +20,7 @@ function Heading({ level, text, color }: IHeading) {
 
   return React.createElement(
     `h${level}`,
-    { className: `${levelClass} ${color}` },
+    { className: `${levelClass} ${TextColor[color]}` },
     text
   );
 }

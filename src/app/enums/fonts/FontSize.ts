@@ -1,0 +1,15 @@
+export enum FontSize {
+  extraSmall = "text-xs",
+  small = "text-sm",
+  base = "text-base",
+  large = "text-lg",
+  large_XL = "text-xl",
+  large_2XL = "text-2xl",
+  large_3XL = "text-3xl",
+  large_4XL = "text-4xl",
+  large_5XL = "text-5xl",
+  large_6XL = "text-6xl",
+  large_7XL = "text-7xl",
+  large_8XL = "text-8xl",
+  large_9XL = "text-9xl",
+}
