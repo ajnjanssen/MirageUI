@@ -1,9 +1,10 @@
 import React from "react";
+import InnerLayout from "@/app/components/templates/layout/InnerLayout";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="container mx-auto">{children}</div>;
+  return <InnerLayout>{children}</InnerLayout>;
 }
