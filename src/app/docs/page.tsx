@@ -2,7 +2,7 @@ import React from "react";
 
 function DocsPage() {
   return (
-    <div className="p-8 bg-white">
+    <div className="">
       <h1 className="text-3xl font-bold mb-4">
         Welcome to MirageUI Documentation
       </h1>

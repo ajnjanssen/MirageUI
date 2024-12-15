@@ -1,6 +1,6 @@
 import Heading from "@/app/components/atoms/heading/heading";
 import Text from "@/app/components/atoms/heading/text/text";
-import Container from "@/app/components/container/container";
+import Container from "@/app/components/templates/container/container";
 import { TextColor } from "@/app/enums/text/TextColor";
 import { TextLeading } from "@/app/enums/text/TextLeading";
 import { TextSize } from "@/app/enums/text/TextSize";

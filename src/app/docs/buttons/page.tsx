@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@/app/components/atoms/button/button";
-import Container from "@/app/components/container/container";
+import Container from "@/app/components/templates/container/container";
 import Heading from "@/app/components/atoms/heading/heading";
 
 function page() {
