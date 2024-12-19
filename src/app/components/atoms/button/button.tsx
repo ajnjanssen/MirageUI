@@ -9,6 +9,14 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
+/**
+ * Button component renders a button element with specified text, type, and disabled state.
+ *
+ * @param {ButtonProps} props - The properties for the Button component.
+ * @param {string} props.text - The text to display inside the button.
+ * @param {string} props.type - The type of the button (e.g., "primary", "secondary").
+ * @param {boolean} [props.disabled=false] - Whether the button is disabled.
+ */
 const Button: React.FC<ButtonProps> = ({ text, type, disabled = false }) => {
   const buttonClass = generateButtonClass(type, disabled);
 

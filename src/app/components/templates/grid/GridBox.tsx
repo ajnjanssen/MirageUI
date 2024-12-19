@@ -21,6 +21,20 @@ interface GridBoxProps {
   justifyItems?: keyof typeof JustifyItems;
 }
 
+/**
+ * A functional component that renders a div with grid layout styles based on the provided props.
+ *
+ * @param {React.ReactNode} children - The content to be rendered inside the grid.
+ * @param {string} [gridAutoColumns] - Defines the size of implicitly created grid columns.
+ * @param {string} [gridAutoFlow] - Controls how the auto-placement algorithm works.
+ * @param {string} [gridAutoRows] - Defines the size of implicitly created grid rows.
+ * @param {string} [gridColumnStartEnd] - Specifies a grid item's start and end position within the grid columns.
+ * @param {string} [gridRowStartEnd] - Specifies a grid item's start and end position within the grid rows.
+ * @param {string} [gridTemplateColumns] - Defines the column structure of the grid.
+ * @param {string} [gridTemplateRows] - Defines the row structure of the grid.
+ * @param {string} [gap] - Specifies the gap between grid items.
+ * @param {string} [justifyItems] - Aligns grid items along the inline (row) axis.
+ */
 function GridBox({
   children,
   gridAutoColumns,

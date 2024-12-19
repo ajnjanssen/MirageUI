@@ -1,6 +1,13 @@
 // src/app/utils/buttonClassGenerator.ts
 import { ButtonColor } from "@/app/enums/button/ButtonColor";
 
+/**
+ * Generates a CSS class string for a button based on its type and disabled state.
+ *
+ * @param type - The color type of the button, which determines its styling.
+ * @param disabled - A boolean indicating whether the button is disabled.
+ * @returns A string containing the CSS classes for the button.
+ */
 export const generateButtonClass = (
   type: ButtonColor,
   disabled: boolean

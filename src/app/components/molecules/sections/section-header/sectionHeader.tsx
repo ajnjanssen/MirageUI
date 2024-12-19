@@ -17,6 +17,19 @@ interface SectionHeaderProps {
   container?: boolean;
 }
 
+/**
+ * SectionHeader component renders a header and optional subtext with customizable styles.
+ *
+ * @param {object} props - The properties object.
+ * @param {string} props.headerText - The main header text.
+ * @param {number} [props.headerSize] - The size level of the header (default is 1).
+ * @param {string} [props.headerColor] - The color of the header text.
+ * @param {string} [props.subText] - The subtext displayed below the header.
+ * @param {string} [props.textColor="Primary"] - The color of the subtext (default is "Primary").
+ * @param {string} [props.textSize="Medium"] - The size of the subtext (default is "Medium").
+ * @param {string} [props.textLeading="None"] - The leading (line height) of the subtext (default is "None").
+ * @param {boolean} [props.container=false] - Whether to wrap the content in a container (default is false).
+ */
 function SectionHeader({
   headerText,
   headerSize,

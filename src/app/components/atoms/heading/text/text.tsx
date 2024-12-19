@@ -12,6 +12,16 @@ interface IText {
   leading?: TextLeading;
 }
 
+/**
+ * A functional component that renders a text element with customizable styles.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string} props.text - The text content to be displayed.
+ * @param {string} props.color - The color class for the text.
+ * @param {string} props.textSize - The size class for the text.
+ * @param {boolean} props.uppercase - If true, the text will be transformed to uppercase.
+ * @param {string} props.leading - The leading (line-height) class for the text.
+ */
 function Text({ text, color, textSize, uppercase, leading }: IText) {
   const classNames = `${color} ${textSize} ${
     uppercase ? "uppercase" : ""

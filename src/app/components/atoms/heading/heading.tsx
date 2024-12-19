@@ -7,6 +7,15 @@ interface IHeading {
   color?: keyof typeof TextColor;
 }
 
+/**
+ * Renders a heading element with a specified level, text, and color.
+ *
+ * @param {Object} props - The properties object.
+ * @param {number} props.level - The heading level (1-6).
+ * @param {string} props.text - The text content of the heading.
+ * @param {string} [props.color="Primary"] - The color of the text, defaults to "Primary".
+ * @returns {JSX.Element} The rendered heading element.
+ */
 function Heading({ level, text, color = "Primary" }: IHeading) {
   const levelClass =
     [
