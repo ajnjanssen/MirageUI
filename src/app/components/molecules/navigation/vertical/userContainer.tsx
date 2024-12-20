@@ -6,24 +6,17 @@ import React from "react";
 
 function UserContainer() {
   return (
-    <div className="flex flex-col justify-between items-center h-full pb-6   px-6  w-full ">
-      <div className=" flex justify-between items-center w-full">
+    <FlexBox flexDirection="Column" justifyContent="Between" alignItems="Start">
+      <NavigationAvatar />
+      <FlexBox justifyContent="Start" alignItems="Start" gap="Gap6">
         <FlexBox
-          justifyContent="Center"
-          alignItems="Center"
-          spaceBetween="SpaceX2"
+          justifyContent="Start"
+          flexDirection="Column"
+          alignItems="Start"
         >
-          <NavigationAvatar />
-          <FlexBox
-            justifyContent="Start"
-            flexDirection="Column"
-            alignItems="Start"
-          >
-            <UserName />
-            <UserEmail />
-          </FlexBox>
+          <UserName />
+          <UserEmail />
         </FlexBox>
-
         <svg
           className="cursor-pointer"
           width="24"
@@ -47,8 +40,8 @@ function UserContainer() {
             strokeLinejoin="round"
           />
         </svg>
-      </div>
-    </div>
+      </FlexBox>
+    </FlexBox>
   );
 }
 

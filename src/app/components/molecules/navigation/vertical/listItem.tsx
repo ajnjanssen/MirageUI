@@ -1,3 +1,4 @@
+import FlexBox from "@/app/components/templates/flex/FlexBox";
 import React, { JSX, useState } from "react";
 
 interface ListItemProps {
@@ -30,13 +31,15 @@ function ListItem({
     <>
       <button
         onClick={toggleMenu}
-        className="flex justify-start items-center space-x-6 w-full rounded px-6 h-fit"
+        className="flex justify-start items-center space-x-6 w-full rounded h-fit transition-all"
       >
         <p className="text-sm leading-5 uppercase">{text}</p>
         {collapsible && (
           <svg
             id="icon1"
-            className={`transform ${isCollapsed ? "rotate-90" : "rotate-180"}`}
+            className={`transform  transition-all ${
+              isCollapsed ? "rotate-90" : "rotate-180"
+            }`}
             width="16"
             viewBox="0 0 24 24"
             fill="none"
@@ -53,12 +56,9 @@ function ListItem({
         )}
       </button>
       {!isCollapsed && (
-        <div
-          id="menu1"
-          className="flex justify-start flex-col w-full md:w-auto items-start pb-1"
-        >
+        <FlexBox uniqueId="menu1" flexDirection="Column" gap="Gap2">
           {children}
-        </div>
+        </FlexBox>
       )}
     </>
   );

@@ -7,8 +7,11 @@ import { AlignContent } from "@/app/enums/align/AlignContent";
 import { Margin } from "@/app/enums/spacing/margin";
 import { Padding } from "@/app/enums/spacing/padding";
 import { SpaceBetween } from "@/app/enums/spacing/spaceBetween";
+import { Gap } from "@/app/enums/gap/Gap";
+import { Height } from "@/app/enums/sizing/height";
 
 interface FlexBoxProps {
+  uniqueId?: string;
   children: React.ReactNode;
   flexDirection?: keyof typeof FlexDirection;
   flexWrap?: keyof typeof FlexWrap;
@@ -18,11 +21,14 @@ interface FlexBoxProps {
   margin?: keyof typeof Margin;
   padding?: keyof typeof Padding;
   spaceBetween?: keyof typeof SpaceBetween;
+  gap?: keyof typeof Gap;
+  height?: keyof typeof Height;
 }
 
 /**
  * A functional component that renders a div with flexbox layout styles based on the provided props.
  *
+ * @param {string} [uniqueId] - The unique identifier for the flexbox.
  * @param {React.ReactNode} children - The content to be rendered inside the flexbox.
  * @param {string} [flexDirection] - Defines the direction of the flex container's main axis.
  * @param {string} [flexWrap] - Controls whether the flex container is single-line or multi-line.
@@ -32,6 +38,8 @@ interface FlexBoxProps {
  * @param {string} [margin] - Specifies the margin around the flex container.
  * @param {string} [padding] - Specifies the padding inside the flex container.
  * @param {string} [spaceBetween] - Specifies the space between flex items.
+ * @param {string} [gap] - Specifies the gap between flex items.
+ * @param {string} [height] - Specifies the height of the flex container.
  */
 function FlexBox({
   children,
@@ -43,6 +51,9 @@ function FlexBox({
   margin,
   padding,
   spaceBetween,
+  gap,
+  uniqueId,
+  height,
 }: FlexBoxProps) {
   const classNames = [
     flexDirection ? FlexDirection[flexDirection] : "",
@@ -53,11 +64,17 @@ function FlexBox({
     margin ? Margin[margin] : "",
     padding ? Padding[padding] : "",
     spaceBetween ? SpaceBetween[spaceBetween] : "",
+    gap ? Gap[gap] : "",
+    height ? Height[height] : "",
   ]
     .filter(Boolean)
     .join(" ");
 
-  return <div className={`flex ${classNames}`}>{children}</div>;
+  return (
+    <div id={uniqueId} className={`flex ${classNames}`}>
+      {children}
+    </div>
+  );
 }
 
 export default FlexBox;

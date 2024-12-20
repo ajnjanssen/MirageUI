@@ -14,7 +14,9 @@ interface NavigationListItemsProps {
 function NavigationListItems({
   children,
 }: NavigationListItemsProps): JSX.Element {
-  return <div className="flex flex-col justify-start w-full">{children}</div>;
+  return (
+    <div className="flex flex-col justify-start w-full gap-4">{children}</div>
+  );
 }
 
 export default NavigationListItems;
