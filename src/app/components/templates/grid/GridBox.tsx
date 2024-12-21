@@ -1,24 +1,18 @@
-import { Gap } from "@/app/enums/gap/Gap";
-import { GridAutoColumns } from "@/app/enums/grid/GridAutoColumns";
-import { GridAutoFlow } from "@/app/enums/grid/GridAutoFlow";
-import { GridAutoRows } from "@/app/enums/grid/GridAutoRows";
-import { GridColumnStartEnd } from "@/app/enums/grid/GridColumnStartEnd";
-import { GridTemplateColumns } from "@/app/enums/grid/GridTemplateColumns";
-import { GridTemplateRows } from "@/app/enums/grid/GridTemplateRows";
-import { JustifyItems } from "@/app/enums/justify/JustifyItems";
 import React from "react";
+import { GridProps } from "@/app/types/common/GridProps";
+import {
+  GridAutoColumns,
+  GridAutoFlow,
+  GridAutoRows,
+  GridColumnStartEnd,
+  GridTemplateColumns,
+  GridTemplateRows,
+} from "@/app/enums/grid";
+import { Gap } from "@/app/enums/gap/Gap";
+import { JustifyItems } from "@/app/enums/justify/JustifyItems";
 
-interface GridBoxProps {
+interface GridBoxProps extends GridProps {
   children: React.ReactNode;
-  gridAutoColumns?: keyof typeof GridAutoColumns;
-  gridAutoFlow?: keyof typeof GridAutoFlow;
-  gridAutoRows?: keyof typeof GridAutoRows;
-  gridColumnStartEnd?: keyof typeof GridColumnStartEnd;
-  gridRowStartEnd?: keyof typeof GridColumnStartEnd;
-  gridTemplateColumns?: keyof typeof GridTemplateColumns;
-  gridTemplateRows?: keyof typeof GridTemplateRows;
-  gap?: keyof typeof Gap;
-  justifyItems?: keyof typeof JustifyItems;
 }
 
 /**

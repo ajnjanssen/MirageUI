@@ -3,6 +3,7 @@ import { FlexProps } from "@/app/types/common/FlexProps";
 import { generateClassNames } from "@/app/utils/classnames/classNameGenerator";
 
 interface FlexBoxProps extends FlexProps {
+  uniqueId?: string;
   children: React.ReactNode;
 }
 
@@ -23,10 +24,14 @@ interface FlexBoxProps extends FlexProps {
  * @param {keyof typeof Height} [props.height] - The height.
  * @returns {JSX.Element} The rendered FlexBox component.
  */
-function FlexBox({ children, ...props }: FlexBoxProps): JSX.Element {
+function FlexBox({ uniqueId, children, ...props }: FlexBoxProps): JSX.Element {
   const classNames = generateClassNames(props);
 
-  return <div className={classNames}>{children}</div>;
+  return (
+    <div id={uniqueId} className={classNames}>
+      {children}
+    </div>
+  );
 }
 
 export default FlexBox;

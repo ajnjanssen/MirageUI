@@ -1,21 +1,48 @@
-import React, { Children, JSX } from "react";
+import InnerListItem from "@/app/components/molecules/navigation/vertical/innerListItem";
+import ListItem from "@/app/components/molecules/navigation/vertical/listItem";
+import { NavigationItem } from "@/app/config/navigation/navigationConfig";
+import React, { JSX, useState } from "react";
 
 interface NavigationListItemsProps {
-  children: React.ReactNode;
+  items: NavigationItem[];
 }
 
 /**
- * A functional component that renders a list of navigation items.
+ * NavigationListItems component that renders a list of ListItem components.
  *
- * @param {NavigationListItemsProps} props - The props for the component.
- * @param {React.ReactNode} props.children - The child elements to be rendered within the navigation list.
- * @returns {JSX.Element} The rendered navigation list items.
+ * @param {Object} props - The properties object.
+ * @param {Array} props.items - The list of items to be rendered.
+ * @returns {JSX.Element} The rendered NavigationListItems component.
  */
-function NavigationListItems({
-  children,
-}: NavigationListItemsProps): JSX.Element {
+function NavigationListItems({ items }: NavigationListItemsProps): JSX.Element {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <div className="flex flex-col justify-start w-full gap-4">{children}</div>
+    <div>
+      {items.map((item, index) => (
+        <ListItem
+          key={index}
+          text={item.text}
+          collapsible={!!item.children}
+          isOpen={openIndex === index}
+          onToggle={() => handleToggle(index)}
+        >
+          {item.children &&
+            item.children.map((child: NavigationItem, childIndex: number) => (
+              <InnerListItem
+                key={childIndex}
+                text={child.text}
+                icon={child.icon}
+                padding="P2"
+              />
+            ))}
+        </ListItem>
+      ))}
+    </div>
   );
 }
 

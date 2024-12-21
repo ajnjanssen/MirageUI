@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children, nunito }) => {
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${nunito.variable} ${nunito.variable} antialiased`}
+        className={`${nunito.variable} ${nunito.variable} ${nunito.variable} bg-base-100 antialiased`}
       >
         <div className="relative w-screen h-screen">
           <div className="z-10">{children}</div>

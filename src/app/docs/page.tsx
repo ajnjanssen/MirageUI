@@ -1,11 +1,12 @@
 import React from "react";
+import H1 from "@/app/components/atoms/text/heading/H1";
 
 function DocsPage() {
   return (
     <div className="">
-      <h1 className="text-3xl font-bold mb-4">
+      <H1 fontWeight="black" textSize="xxxl" textColor="BaseContent">
         Welcome to MirageUI Documentation
-      </h1>
+      </H1>
       <p className="text-lg mb-6">
         MirageUI is a comprehensive collection of user interface components
         designed specifically for React applications. Our goal is to provide

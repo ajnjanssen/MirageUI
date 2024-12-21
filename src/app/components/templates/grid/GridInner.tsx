@@ -1,11 +1,13 @@
-import { GridColumnStartEnd } from "@/app/enums/grid/GridColumnStartEnd";
-import { GridTemplateColumns } from "@/app/enums/grid/GridTemplateColumns";
 import React from "react";
+import {
+  GridProps,
+  GridColumnStartEnd,
+  GridTemplateColumns,
+} from "@/app/types/common/GridProps";
 
-interface GridInnerProps {
+interface GridInnerProps extends GridProps {
   children: React.ReactNode;
   colSpan?: keyof typeof GridColumnStartEnd;
-  gridTemplateColumns?: keyof typeof GridTemplateColumns;
 }
 
 /**
