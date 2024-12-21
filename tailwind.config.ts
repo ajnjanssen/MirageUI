@@ -21,7 +21,14 @@ export default {
     },
   },
   plugins: [
-    function ({ addUtilities }) {
+    function ({
+      addUtilities,
+    }: {
+      addUtilities: (
+        utilities: Record<string, any>,
+        options?: Partial<{ respectPrefix: boolean; respectImportant: boolean }>
+      ) => void;
+    }) {
       const newUtilities = {
         ".glass": {
           background: "rgba(255, 255, 255, 0.2)",
@@ -33,7 +40,7 @@ export default {
           color: "#333333",
         },
       };
-      addUtilities(newUtilities, ["responsive", "hover"]);
+      addUtilities(newUtilities);
     },
   ],
 } satisfies Config;
