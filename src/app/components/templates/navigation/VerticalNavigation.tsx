@@ -10,7 +10,7 @@ const VerticalNavigation = () => {
   return (
     <Container>
       <div className="glass isolate aspect-video w-96 rounded-xl shadow-lg ring-1 ring-black/5 backdrop-filter backdrop-blur-lg">
-        <FlexBox flexDirection="Column" padding="P6" height="HScreen">
+        <FlexBox flexDirection="Column" padding="P6" height="HFit">
           <FlexBox
             flexDirection="Column"
             padding="P6"
