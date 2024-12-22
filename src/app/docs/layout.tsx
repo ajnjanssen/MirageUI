@@ -12,20 +12,22 @@ export default function RootLayout({
 }>) {
   return (
     <InnerLayout>
-      <GridBox
-        gridTemplateColumns="Col4"
-        gap="Gap8"
-        justifyItems="Start"
-        gridAutoFlow="ColDense"
-      >
-        <GridInner colSpan="ColSpan1">
-          <VerticalNavigation />
-        </GridInner>
+      <Container>
+        <GridBox
+          gridTemplateColumns="Col4"
+          gap="Gap8"
+          justifyItems="Start"
+          gridAutoFlow="ColDense"
+        >
+          <GridInner colSpan="ColSpan1" width="w-full">
+            <VerticalNavigation />
+          </GridInner>
 
-        <GridInner colSpan="ColSpan3">
-          <Container>{children}</Container>
-        </GridInner>
-      </GridBox>
+          <GridInner colSpan="ColSpan3">
+            <Container glass>{children}</Container>
+          </GridInner>
+        </GridBox>
+      </Container>
     </InnerLayout>
   );
 }

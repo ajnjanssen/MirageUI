@@ -8,3 +8,4 @@ export { Padding } from "./spacing/padding";
 export { SpaceBetween } from "./spacing/spaceBetween";
 export { Gap } from "./gap/Gap";
 export { Height } from "./sizing/height";
+export { Width } from "./sizing/width";

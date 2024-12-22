@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background: url(https://imgcdn.stablediffusionweb.com/2024/9/16/d6d9b281-5c28-4a7e-9f66-3d571179bf11.jpg);
+  background: url("/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

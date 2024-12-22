@@ -1,4 +1,3 @@
-// src/components/Container.tsx
 import React from "react";
 import { getFlexClasses, FlexOptions } from "@/app/utils/layout/flex";
 import { getGridClasses, GridOptions } from "@/app/utils/layout/grid";
@@ -23,7 +22,7 @@ interface Props extends FlexOptions, GridOptions {
  * @param {number} rows - Number of rows for grid layout.
  * @param {string} gap - Gap between grid items.
  * @param {string} flow - Grid auto-flow property.
- * @param {string} glass - Additional class for glass effect.
+ * @param {boolean} glass - Flag to enable glass effect.
  */
 const Container: React.FC<Props> = ({
   children,
@@ -51,7 +50,7 @@ const Container: React.FC<Props> = ({
   const combinedClasses = `${flexClasses} ${gridClasses}`;
 
   return (
-    <div className={`${glass ? glass : ""} w-full p-8 ${combinedClasses}`}>
+    <div className={`${glass ? "glass" : ""} w-full p-8 ${combinedClasses}`}>
       {children}
     </div>
   );

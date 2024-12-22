@@ -9,6 +9,7 @@ import {
   SpaceBetween,
   Gap,
   Height,
+  Width,
 } from "@/app/enums";
 
 export interface FlexProps {
@@ -22,4 +23,5 @@ export interface FlexProps {
   spaceBetween?: keyof typeof SpaceBetween;
   gap?: keyof typeof Gap;
   height?: keyof typeof Height;
+  width?: keyof typeof Width;
 }

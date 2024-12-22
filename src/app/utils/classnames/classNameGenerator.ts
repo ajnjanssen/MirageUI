@@ -9,6 +9,7 @@ import {
   SpaceBetween,
   Gap,
   Height,
+  Width,
 } from "@/app/enums";
 import { FlexProps } from "@/app/types/common/FlexProps";
 
@@ -24,6 +25,7 @@ export function generateClassNames(props: FlexProps): string {
     spaceBetween,
     gap,
     height,
+    width,
   } = props;
 
   return [
@@ -37,6 +39,7 @@ export function generateClassNames(props: FlexProps): string {
     spaceBetween ? SpaceBetween[spaceBetween] : "",
     gap ? Gap[gap] : "",
     height ? Height[height] : "",
+    width ? Width[width] : "",
   ]
     .filter(Boolean)
     .join(" ");
