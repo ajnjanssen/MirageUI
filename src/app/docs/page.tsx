@@ -6,6 +6,7 @@ import Container from "../components/templates/container/container";
 import ListItem from "../components/atoms/list/listItem";
 import BulletList from "../components/molecules/list/bulletList";
 import FlexBox from "../components/templates/flex/FlexBox";
+import Label from "../components/atoms/text/label/label";
 
 function DocsPage() {
   return (
@@ -14,7 +15,7 @@ function DocsPage() {
         borderColor="primary"
         fontWeight="black"
         textSize="xxxl"
-        textColor="baseContent"
+        textColor="primary"
       >
         Welcome to MirageUI Documentation
       </H1>

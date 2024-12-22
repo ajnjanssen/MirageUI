@@ -1,5 +1,6 @@
 import InnerListItem from "@/app/components/molecules/navigation/vertical/innerListItem";
 import ListItem from "@/app/components/molecules/navigation/vertical/listItem";
+import Container from "@/app/components/templates/container/container";
 import FlexBox from "@/app/components/templates/flex/FlexBox";
 import { NavigationItem } from "@/app/config/navigation/navigationConfig";
 import React, { JSX, useState } from "react";
@@ -23,27 +24,29 @@ function NavigationListItems({ items }: NavigationListItemsProps): JSX.Element {
   };
 
   return (
-    <FlexBox flexDirection="Column" gap="Gap2">
-      {items.map((item, index) => (
-        <ListItem
-          key={index}
-          text={item.text}
-          collapsible={!!item.children}
-          isOpen={openIndex === index}
-          onToggle={() => handleToggle(index)}
-        >
-          {item.children &&
-            item.children.map((child: NavigationItem, childIndex: number) => (
-              <InnerListItem
-                key={childIndex}
-                text={child.text}
-                icon={child.icon}
-                padding="P2"
-              />
-            ))}
-        </ListItem>
-      ))}
-    </FlexBox>
+    <Container>
+      <FlexBox flexDirection="Column" gap="Gap2">
+        {items.map((item, index) => (
+          <ListItem
+            key={index}
+            text={item.text}
+            collapsible={!!item.children}
+            isOpen={openIndex === index}
+            onToggle={() => handleToggle(index)}
+          >
+            {item.children &&
+              item.children.map((child: NavigationItem, childIndex: number) => (
+                <InnerListItem
+                  key={childIndex}
+                  text={child.text}
+                  icon={child.icon}
+                  padding="P2"
+                />
+              ))}
+          </ListItem>
+        ))}
+      </FlexBox>
+    </Container>
   );
 }
 
