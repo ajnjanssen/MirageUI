@@ -41,7 +41,7 @@ function ListItem({
     <>
       <button
         onClick={onToggle}
-        className="flex justify-between items-center space-x-6 w-full rounded h-fit transition-all"
+        className="flex justify-between items-center space-x-6 w-full rounded h-fit transition-all font-bold uppercase"
       >
         <p className="text-base-content">{text}</p>
         {collapsible && (

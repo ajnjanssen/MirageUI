@@ -23,7 +23,7 @@ function NavigationListItems({ items }: NavigationListItemsProps): JSX.Element {
   };
 
   return (
-    <FlexBox flexDirection="Column" gap="Gap4">
+    <FlexBox flexDirection="Column" gap="Gap2">
       {items.map((item, index) => (
         <ListItem
           key={index}
