@@ -4,17 +4,21 @@ import Container from "@/app/components/templates/container/container";
 import { TextColor } from "@/app/enums/text/TextColor";
 import { TextLeading } from "@/app/enums/text/TextLeading";
 import { TextSize } from "@/app/enums/text/TextSize";
+import { Margin, Padding, Height, Width } from "@/app/enums";
 import React from "react";
+import { TextProps } from "@/app/types/common/text/TextProps";
+import { CommonProps } from "@/app/types/common/commonProps";
 
-interface SectionHeaderProps {
+interface SectionHeaderProps extends TextProps, CommonProps {
   headerText: string;
   headerSize?: number;
   headerColor?: keyof typeof TextColor;
   subText?: string;
-  textColor?: keyof typeof TextColor;
-  textSize?: keyof typeof TextSize;
-  textLeading?: keyof typeof TextLeading;
   container?: boolean;
+  width?: keyof typeof Width;
+  height?: keyof typeof Height;
+  margin?: keyof typeof Margin;
+  padding?: keyof typeof Padding;
 }
 
 /**
@@ -33,12 +37,17 @@ interface SectionHeaderProps {
 function SectionHeader({
   headerText,
   headerSize,
-  headerColor, // Default value as string
+  headerColor,
   subText,
-  textColor = "Primary", // Default value as string
-  textSize = "Medium", // Default value as string
-  textLeading = "None", // Default value as string
+  textColor = "primary",
+  textSize = "medium",
+  textLeading = "None",
   container = false,
+  margin,
+  padding,
+  height,
+  width,
+  ...props
 }: SectionHeaderProps) {
   const content = (
     <>
@@ -48,11 +57,20 @@ function SectionHeader({
         color={TextColor[textColor]}
         textSize={TextSize[textSize]}
         leading={TextLeading[textLeading]}
+        {...props}
       />
     </>
   );
 
-  return container ? <Container>{content}</Container> : content;
+  const commonClasses = `${margin ? Margin[margin] : ""} ${
+    padding ? Padding[padding] : ""
+  } ${height ? Height[height] : ""} ${width ? Width[width] : ""}`;
+
+  return container ? (
+    <Container className={commonClasses}>{content}</Container>
+  ) : (
+    <div className={commonClasses}>{content}</div>
+  );
 }
 
 export default SectionHeader;

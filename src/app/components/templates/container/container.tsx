@@ -1,9 +1,12 @@
 import React from "react";
 import { getFlexClasses, FlexOptions } from "@/app/utils/layout/flex";
 import { getGridClasses, GridOptions } from "@/app/utils/layout/grid";
+import { CommonProps } from "@/app/types/common/commonprops";
+import { Margin, Padding, Height, Width } from "@/app/enums";
 
-interface Props extends FlexOptions, GridOptions {
+interface Props extends FlexOptions, GridOptions, CommonProps {
   children?: React.ReactNode;
+  className?: string;
   size?: string;
   glass?: boolean;
 }
@@ -23,9 +26,12 @@ interface Props extends FlexOptions, GridOptions {
  * @param {string} gap - Gap between grid items.
  * @param {string} flow - Grid auto-flow property.
  * @param {boolean} glass - Flag to enable glass effect.
+ * @param {string} className - Additional class names to be applied.
+ * @returns {React.ReactElement} The rendered container component.
  */
 const Container: React.FC<Props> = ({
   children,
+  className,
   flex,
   grid,
   direction,
@@ -37,6 +43,10 @@ const Container: React.FC<Props> = ({
   gap,
   flow,
   glass,
+  margin,
+  padding,
+  height,
+  width,
 }: Props) => {
   const flexClasses = getFlexClasses({
     flex,
@@ -48,9 +58,16 @@ const Container: React.FC<Props> = ({
   });
   const gridClasses = getGridClasses({ grid, cols, rows, gap, flow });
   const combinedClasses = `${flexClasses} ${gridClasses}`;
+  const commonClasses = `${margin ? Margin[margin] : ""} ${
+    padding ? Padding[padding] : ""
+  } ${height ? Height[height] : ""} ${width ? Width[width] : ""}`;
 
   return (
-    <div className={`${glass ? "glass" : ""} w-full p-8 ${combinedClasses}`}>
+    <div
+      className={`${
+        glass ? "glass" : ""
+      } ${combinedClasses} ${commonClasses} ${className}`}
+    >
       {children}
     </div>
   );

@@ -42,7 +42,7 @@ export default {
         ".glass": {
           isolation: "isolate",
           aspectRatio: "16 / 9",
-          borderRadius: "0.75rem",
+          borderRadius: "1.5rem",
           backgroundColor: "rgba(255, 255, 255, 0.2)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",

@@ -1,6 +1,5 @@
 import React from "react";
 import InnerLayout from "@/app/components/templates/layout/InnerLayout";
-import VerticalNavigation from "@/app/components/templates/navigation/VerticalNavigation";
 import GridBox from "@/app/components/templates/grid/GridBox";
 import GridInner from "@/app/components/templates/grid/GridInner";
 import Container from "../components/templates/container/container";
@@ -14,17 +13,23 @@ export default function RootLayout({
     <InnerLayout>
       <Container padding="Py6">
         <GridBox
-          gridTemplateColumns="Col4"
+          gridTemplateColumns="Col3"
           gap="Gap8"
           justifyItems="Start"
           gridAutoFlow="ColDense"
         >
-          <GridInner colSpan="ColSpan1" width="w-full">
-            <VerticalNavigation />
+          <GridInner width="w-full">
+            <Container width="w-full" padding="P6" glass>
+              {children}
+            </Container>
           </GridInner>
-
-          <GridInner colSpan="ColSpan3">
-            <Container padding="P8" glass>
+          <GridInner width="w-full">
+            <Container width="w-full" padding="P6" glass>
+              {children}
+            </Container>
+          </GridInner>
+          <GridInner width="w-full">
+            <Container width="w-full" padding="P6" glass>
               {children}
             </Container>
           </GridInner>

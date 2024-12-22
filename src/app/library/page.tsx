@@ -4,12 +4,13 @@ import SectionHeader from "@/app/components/molecules/sections/section-header/se
 function page() {
   return (
     <SectionHeader
+      width="w-full"
       headerText="Library"
       headerSize={1}
-      headerColor="Primary"
+      headerColor="primary"
       subText="This is the library page"
-      textColor="Secondary"
-      textSize="Large"
+      textColor="secondary"
+      textSize="large"
       textLeading="Relaxed"
       container
     />
