@@ -1,5 +1,5 @@
 import HeroIcon from "@/app/components/atoms/icon/hero/heroIcon";
-import React, { Children, JSX, useState } from "react";
+import React, { JSX } from "react";
 import { TextColor } from "@/app/enums/text/TextColor";
 import { Padding } from "@/app/enums/spacing/padding";
 
