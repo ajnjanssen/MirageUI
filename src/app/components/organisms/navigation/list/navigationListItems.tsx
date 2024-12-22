@@ -1,5 +1,6 @@
 import InnerListItem from "@/app/components/molecules/navigation/vertical/innerListItem";
 import ListItem from "@/app/components/molecules/navigation/vertical/listItem";
+import FlexBox from "@/app/components/templates/flex/FlexBox";
 import { NavigationItem } from "@/app/config/navigation/navigationConfig";
 import React, { JSX, useState } from "react";
 
@@ -22,7 +23,7 @@ function NavigationListItems({ items }: NavigationListItemsProps): JSX.Element {
   };
 
   return (
-    <div>
+    <FlexBox flexDirection="Column" gap="Gap4">
       {items.map((item, index) => (
         <ListItem
           key={index}
@@ -42,7 +43,7 @@ function NavigationListItems({ items }: NavigationListItemsProps): JSX.Element {
             ))}
         </ListItem>
       ))}
-    </div>
+    </FlexBox>
   );
 }
 

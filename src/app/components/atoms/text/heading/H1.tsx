@@ -36,8 +36,12 @@ interface H1Props extends TextProps {
  * @param {keyof typeof FontWeight} [props.fontWeight] - The font weight.
  * @returns {JSX.Element} The rendered H1 component.
  */
-function H1({ children, ...props }: H1Props): JSX.Element {
-  const classNames = generateTextClassNames(props);
+function H1({ children, textColor, textSize, ...props }: H1Props): JSX.Element {
+  const classNames = generateTextClassNames({
+    ...props,
+    textColor: textColor || "baseContent",
+    textSize: textSize || "xxxxxxl",
+  });
 
   return <h1 className={`${classNames}`}>{children}</h1>;
 }

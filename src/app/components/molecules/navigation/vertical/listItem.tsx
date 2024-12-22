@@ -41,13 +41,13 @@ function ListItem({
     <>
       <button
         onClick={onToggle}
-        className="flex justify-start items-center space-x-6 w-full rounded h-fit transition-all"
+        className="flex justify-between items-center space-x-6 w-full rounded h-fit transition-all"
       >
-        <p className="text-sm leading-5 uppercase">{text}</p>
+        <p className="text-base-content">{text}</p>
         {collapsible && (
           <svg
             id="icon1"
-            className={`transform transition-all ${
+            className={`transform transition-all text-base-content ${
               isOpen ? "rotate-180" : "rotate-90"
             }`}
             width="16"

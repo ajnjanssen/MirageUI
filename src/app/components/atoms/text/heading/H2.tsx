@@ -36,8 +36,12 @@ interface H2Props extends TextProps {
  * @param {keyof typeof FontWeight} [props.fontWeight] - The font weight.
  * @returns {JSX.Element} The rendered H2 component.
  */
-function H2({ children, ...props }: H2Props): JSX.Element {
-  const classNames = generateTextClassNames(props);
+function H2({ children, textColor, textSize, ...props }: H2Props): JSX.Element {
+  const classNames = generateTextClassNames({
+    ...props,
+    textColor: textColor || "baseContent",
+    textSize: textSize || "xxxxxl",
+  });
 
   return <h2 className={`${classNames}`}>{children}</h2>;
 }

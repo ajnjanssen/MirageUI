@@ -2,15 +2,15 @@ import React, { JSX } from "react";
 import { TextProps } from "@/app/types/common/text/TextProps";
 import { generateTextClassNames } from "@/app/utils/classnames/textClassNameGenerator";
 
-interface H3Props extends TextProps {
+interface ListItemProps extends TextProps {
   children: React.ReactNode;
 }
 
 /**
- * H3 component renders an H3 heading with optional text properties.
+ * ListItem component renders a list item with optional text properties.
  *
  * @param {Object} props - The properties object.
- * @param {React.ReactNode} props.children - The content to be rendered inside the H3 element.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the list item element.
  * @param {keyof typeof TextAlign} [props.textAlign] - The text alignment.
  * @param {keyof typeof TextColor} [props.textColor] - The text color.
  * @param {keyof typeof TextSize} [props.textSize] - The text size.
@@ -34,16 +34,25 @@ interface H3Props extends TextProps {
  * @param {keyof typeof FontStyle} [props.fontStyle] - The font style.
  * @param {keyof typeof FontVariantNumeric} [props.fontVariantNumeric] - The font variant numeric.
  * @param {keyof typeof FontWeight} [props.fontWeight] - The font weight.
- * @returns {JSX.Element} The rendered H3 component.
+ * @param {keyof typeof BorderColor} [props.borderColor] - The border color.
+ * @param {keyof typeof BorderWidth} [props.borderWidth] - The border width.
+ * @param {keyof typeof BorderRadius} [props.borderRadius] - The border radius.
+ * @param {keyof typeof BorderStyle} [props.borderStyle] - The border style.
+ * @returns {JSX.Element} The rendered list item component.
  */
-function H3({ children, textColor, textSize, ...props }: H3Props): JSX.Element {
+function ListItem({
+  children,
+  textColor,
+  textSize,
+  ...props
+}: ListItemProps): JSX.Element {
   const classNames = generateTextClassNames({
     ...props,
     textColor: textColor || "baseContent",
-    textSize: textSize || "xxxxl",
+    textSize: textSize || "small",
   });
 
-  return <h3 className={`${classNames}`}>{children}</h3>;
+  return <li className={`${classNames}`}>{children}</li>;
 }
 
-export default H3;
+export default ListItem;

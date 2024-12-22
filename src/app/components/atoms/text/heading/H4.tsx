@@ -36,8 +36,12 @@ interface H4Props extends TextProps {
  * @param {keyof typeof FontWeight} [props.fontWeight] - The font weight.
  * @returns {JSX.Element} The rendered H4 component.
  */
-function H4({ children, ...props }: H4Props): JSX.Element {
-  const classNames = generateTextClassNames(props);
+function H4({ children, textColor, textSize, ...props }: H4Props): JSX.Element {
+  const classNames = generateTextClassNames({
+    ...props,
+    textColor: textColor || "baseContent",
+    textSize: textSize || "xxxl",
+  });
 
   return <h4 className={`${classNames}`}>{children}</h4>;
 }

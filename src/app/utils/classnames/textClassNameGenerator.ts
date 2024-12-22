@@ -1,3 +1,4 @@
+import { TextProps } from "@/app/types/common/text/TextProps";
 import {
   TextAlign,
   TextColor,
@@ -17,6 +18,7 @@ import {
   TextWordBreak,
   TextWrap,
 } from "@/app/enums/text";
+
 import {
   FontFamily,
   FontSize as FontSizeEnum,
@@ -25,7 +27,13 @@ import {
   FontVariantNumeric,
   FontWeight,
 } from "@/app/enums/fonts";
-import { TextProps } from "@/app/types/common/text/TextProps";
+
+import {
+  BorderColor,
+  BorderWidth,
+  BorderRadius,
+  BorderStyle,
+} from "@/app/enums/border";
 
 export function generateTextClassNames(props: TextProps): string {
   const {
@@ -52,6 +60,10 @@ export function generateTextClassNames(props: TextProps): string {
     fontStyle,
     fontVariantNumeric,
     fontWeight,
+    borderColor,
+    borderWidth,
+    borderRadius,
+    borderStyle,
   } = props;
 
   return [
@@ -80,6 +92,10 @@ export function generateTextClassNames(props: TextProps): string {
     fontStyle ? FontStyle[fontStyle] : "",
     fontVariantNumeric ? FontVariantNumeric[fontVariantNumeric] : "",
     fontWeight ? FontWeight[fontWeight] : "",
+    borderColor ? BorderColor[borderColor] : "",
+    borderWidth ? BorderWidth[borderWidth] : "",
+    borderRadius ? BorderRadius[borderRadius] : "",
+    borderStyle ? BorderStyle[borderStyle] : "",
   ]
     .filter(Boolean)
     .join(" ");

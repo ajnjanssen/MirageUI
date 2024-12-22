@@ -30,12 +30,12 @@ function InnerListItem({
     <>
       {icon ? (
         <button
-          className={`flex justify-start items-center w-full text-base-content rounded transition-all ${
+          className={`flex justify-start gap-4 items-center w-full text-base-content rounded transition-all ${
             textColor ? TextColor[textColor] : "text-base-content"
           } ${padding ? Padding[padding] : ""}`}
         >
           <HeroIcon icon={icon} />
-          <p className="text-base leading-4">{text}</p>
+          <p className="text-base-content leading-4">{text}</p>
         </button>
       ) : (
         <button
@@ -43,7 +43,7 @@ function InnerListItem({
             textColor ? TextColor[textColor] : "text-base-content"
           } ${padding ? Padding[padding] : ""}`}
         >
-          <p className="text-base leading-4">{text}</p>
+          <p className="text-base-content leading-4">{text}</p>
         </button>
       )}
     </>

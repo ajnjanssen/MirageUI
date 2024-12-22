@@ -36,8 +36,12 @@ interface H5Props extends TextProps {
  * @param {keyof typeof FontWeight} [props.fontWeight] - The font weight.
  * @returns {JSX.Element} The rendered H5 component.
  */
-function H5({ children, ...props }: H5Props): JSX.Element {
-  const classNames = generateTextClassNames(props);
+function H5({ children, textColor, textSize, ...props }: H5Props): JSX.Element {
+  const classNames = generateTextClassNames({
+    ...props,
+    textColor: textColor || "baseContent",
+    textSize: textSize || "xxl",
+  });
 
   return <h5 className={`${classNames}`}>{children}</h5>;
 }

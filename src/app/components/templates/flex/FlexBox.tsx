@@ -28,7 +28,7 @@ function FlexBox({ uniqueId, children, ...props }: FlexBoxProps): JSX.Element {
   const classNames = generateClassNames(props);
 
   return (
-    <div id={uniqueId} className={classNames}>
+    <div id={uniqueId} className={`flex ${classNames}`}>
       {children}
     </div>
   );

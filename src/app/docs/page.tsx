@@ -1,72 +1,100 @@
 import React from "react";
 import H1 from "@/app/components/atoms/text/heading/H1";
+import H2 from "@/app/components/atoms/text/heading/H2";
+import P from "@/app/components/atoms/text/text/p";
+import Container from "../components/templates/container/container";
+import ListItem from "../components/atoms/list/listItem";
+import BulletList from "../components/molecules/list/bulletList";
+import FlexBox from "../components/templates/flex/FlexBox";
 
 function DocsPage() {
   return (
-    <div className="">
-      <H1 fontWeight="black" textSize="xxxl" textColor="BaseContent">
-        Welcome to MirageUI Documentation
-      </H1>
-      <p className="text-lg mb-6">
-        MirageUI is a comprehensive collection of user interface components
-        designed specifically for React applications. Our goal is to provide
-        developers with a robust and versatile toolkit to build modern and
-        visually appealing web applications with ease.
-      </p>
+    <Container>
+      <FlexBox flexDirection="Column" gap="Gap8">
+        <H1
+          borderColor="primary"
+          fontWeight="black"
+          textSize="xxxl"
+          textColor="baseContent"
+        >
+          Welcome to MirageUI Documentation
+        </H1>
+        <P>
+          MirageUI is a comprehensive collection of user interface components
+          designed specifically for React applications. Our goal is to provide
+          developers with a robust and versatile toolkit to build modern and
+          visually appealing web applications with ease.
+        </P>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Introduction</h2>
-        <p className="text-base">
+        <H2
+          borderColor="primary"
+          fontWeight="black"
+          textSize="xxl"
+          textColor="baseContent"
+        >
+          Introduction
+        </H2>
+        <P>
           MirageUI offers a wide range of UI components, including buttons,
           containers, forms, and more. Each component is built with flexibility
           and customization in mind, ensuring that you can tailor them to fit
           the unique needs of your project.
-        </p>
-      </section>
+        </P>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Features</h2>
-        <ul className="list-disc list-inside">
-          <li className="text-base mb-2">Modern and sleek design</li>
-          <li className="text-base mb-2">Highly customizable components</li>
-          <li className="text-base mb-2">
-            Built with TypeScript for type safety
-          </li>
-          <li className="text-base mb-2">Responsive and accessible</li>
-          <li className="text-base mb-2">Seamless integration with React</li>
-        </ul>
-      </section>
+        <H2
+          borderColor="primary"
+          fontWeight="black"
+          textSize="xxl"
+          textColor="baseContent"
+        >
+          Features
+        </H2>
+        <BulletList>
+          <ListItem>Modern and sleek design</ListItem>
+          <ListItem>Responsive and mobile-friendly</ListItem>
+          <ListItem>Highly customizable</ListItem>
+          <ListItem>Easy to use and integrate</ListItem>
+        </BulletList>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Getting Started</h2>
-        <p className="text-base">
+        <H2
+          borderColor="primary"
+          fontWeight="black"
+          textSize="xxl"
+          textColor="baseContent"
+        >
+          Getting Started
+        </H2>
+        <P>
           To get started with MirageUI, follow our comprehensive guide that
           covers installation, basic usage, and examples of each component.
           Whether you're a seasoned developer or just starting out, our
           documentation provides all the information you need to leverage
           MirageUI to its fullest potential.
-        </p>
-      </section>
+        </P>
 
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">
+        <H2
+          borderColor="primary"
+          fontWeight="black"
+          textSize="xxl"
+          textColor="baseContent"
+        >
           Support and Contributions
-        </h2>
-        <p className="text-base">
+        </H2>
+        <P>
           MirageUI is an open-source project, and we welcome contributions from
           the community. If you encounter any issues or have suggestions for
           improvements, please feel free to submit an issue or a pull request on
           our GitHub repository. Your feedback and contributions are invaluable
           in making MirageUI even better.
-        </p>
-      </section>
+        </P>
 
-      <footer className="mt-8">
-        <p className="text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} MirageUI. All rights reserved.
-        </p>
-      </footer>
-    </div>
+        <footer className="mt-8">
+          <P>
+            &copy; {new Date().getFullYear()} MirageUI. All rights reserved.
+          </P>
+        </footer>
+      </FlexBox>
+    </Container>
   );
 }
 

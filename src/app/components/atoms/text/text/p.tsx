@@ -2,15 +2,15 @@ import React, { JSX } from "react";
 import { TextProps } from "@/app/types/common/text/TextProps";
 import { generateTextClassNames } from "@/app/utils/classnames/textClassNameGenerator";
 
-interface H3Props extends TextProps {
+interface pProps extends TextProps {
   children: React.ReactNode;
 }
 
 /**
- * H3 component renders an H3 heading with optional text properties.
+ * p component renders an p heading with optional text properties.
  *
  * @param {Object} props - The properties object.
- * @param {React.ReactNode} props.children - The content to be rendered inside the H3 element.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the p element.
  * @param {keyof typeof TextAlign} [props.textAlign] - The text alignment.
  * @param {keyof typeof TextColor} [props.textColor] - The text color.
  * @param {keyof typeof TextSize} [props.textSize] - The text size.
@@ -34,16 +34,16 @@ interface H3Props extends TextProps {
  * @param {keyof typeof FontStyle} [props.fontStyle] - The font style.
  * @param {keyof typeof FontVariantNumeric} [props.fontVariantNumeric] - The font variant numeric.
  * @param {keyof typeof FontWeight} [props.fontWeight] - The font weight.
- * @returns {JSX.Element} The rendered H3 component.
+ * @returns {JSX.Element} The rendered p component.
  */
-function H3({ children, textColor, textSize, ...props }: H3Props): JSX.Element {
+function P({ children, textColor, textSize, ...props }: pProps): JSX.Element {
   const classNames = generateTextClassNames({
     ...props,
     textColor: textColor || "baseContent",
-    textSize: textSize || "xxxxl",
+    textSize: textSize || "small",
   });
 
-  return <h3 className={`${classNames}`}>{children}</h3>;
+  return <p className={`${classNames}`}>{children}</p>;
 }
 
-export default H3;
+export default P;

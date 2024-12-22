@@ -27,6 +27,13 @@ import {
   FontWeight,
 } from "@/app/enums/fonts";
 
+import {
+  BorderColor,
+  BorderWidth,
+  BorderRadius,
+  BorderStyle,
+} from "@/app/enums/border";
+
 export interface TextProps {
   textAlign?: keyof typeof TextAlign;
   textColor?: keyof typeof TextColor;
@@ -51,4 +58,8 @@ export interface TextProps {
   fontStyle?: keyof typeof FontStyle;
   fontVariantNumeric?: keyof typeof FontVariantNumeric;
   fontWeight?: keyof typeof FontWeight;
+  borderColor?: keyof typeof BorderColor;
+  borderWidth?: keyof typeof BorderWidth;
+  borderRadius?: keyof typeof BorderRadius;
+  borderStyle?: keyof typeof BorderStyle;
 }

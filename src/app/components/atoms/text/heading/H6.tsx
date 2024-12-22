@@ -36,8 +36,12 @@ interface H6Props extends TextProps {
  * @param {keyof typeof FontWeight} [props.fontWeight] - The font weight.
  * @returns {JSX.Element} The rendered H6 component.
  */
-function H6({ children, ...props }: H6Props): JSX.Element {
-  const classNames = generateTextClassNames(props);
+function H6({ children, textColor, textSize, ...props }: H6Props): JSX.Element {
+  const classNames = generateTextClassNames({
+    ...props,
+    textColor: textColor || "baseContent",
+    textSize: textSize || "xl",
+  });
 
   return <h6 className={`${classNames}`}>{children}</h6>;
 }
