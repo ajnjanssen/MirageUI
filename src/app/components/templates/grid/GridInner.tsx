@@ -5,7 +5,7 @@ import {
   GridTemplateColumns,
 } from "@/app/types/common/GridProps";
 
-import { CommonProps } from "@/app/types/common/commonprops";
+import { CommonProps } from "@/app/types/common/commonProps";
 import { Margin, Padding, Height, Width } from "@/app/enums";
 
 interface GridInnerProps extends GridProps, CommonProps {
