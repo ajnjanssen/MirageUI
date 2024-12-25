@@ -1,7 +1,7 @@
 import React from "react";
 import { getFlexClasses, FlexOptions } from "@/app/utils/layout/flex";
 import { getGridClasses, GridOptions } from "@/app/utils/layout/grid";
-import { CommonProps } from "@/app/types/common/commonprops";
+import { CommonProps } from "@/app/types/common/commonProps";
 import { Margin, Padding, Height, Width } from "@/app/enums";
 
 interface Props extends FlexOptions, GridOptions, CommonProps {
