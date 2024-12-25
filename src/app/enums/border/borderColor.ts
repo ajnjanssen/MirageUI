@@ -5,7 +5,7 @@ export enum BorderColor {
   base300 = "border-base-300", // Tertiary background
   baseContent = "border-base-content", // Primary text
   primary = "border-primary", // Primary accent
-  secondary = "border-primary", // Secondary text
+  secondary = "border-secondary", // Secondary text
   warning = "border-warning", // Warning
   error = "border-error", // Error
   disabled = "border-disabled", // Disabled

@@ -4,7 +4,6 @@ import React from "react";
 import NavigationListItems from "@/app/components/organisms/navigation/list/navigationListItems";
 import { navigationItems } from "@/app/config/navigation/navigationConfig";
 import FlexBox from "@/app/components/templates/flex/FlexBox";
-import Container from "@/app/components/templates/container/container";
 
 const VerticalNavigation = () => {
   return (

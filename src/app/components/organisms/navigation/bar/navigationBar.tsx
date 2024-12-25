@@ -100,8 +100,8 @@ function NavigationBar() {
                 <h3 className="font-bold text-xl mb-3">Heading 3</h3>
                 <p className="text-sm text-gray-100 mb-4">
                   This proposal is a win-win situation which will cause a
-                  stellar paradigm shift, let's touch base off-line before we
-                  fire the new UX experience.
+                  stellar paradigm shift, let&apos;s touch base off-line before
+                  we fire the new UX experience.
                 </p>
                 <a
                   href="#"

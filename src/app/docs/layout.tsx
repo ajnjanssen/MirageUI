@@ -4,7 +4,6 @@ import VerticalNavigation from "@/app/components/templates/navigation/VerticalNa
 import GridBox from "@/app/components/templates/grid/GridBox";
 import GridInner from "@/app/components/templates/grid/GridInner";
 import Container from "../components/templates/container/container";
-import { GridTemplateColumns } from "../enums/grid";
 
 export default function RootLayout({
   children,
