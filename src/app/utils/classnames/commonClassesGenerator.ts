@@ -1,5 +1,5 @@
 import { Margin, Padding, Height, Width } from "@/app/enums";
-import { CommonProps } from "@/app/types/common/commonprops";
+import { CommonProps } from "@/app/types/common/commonProps";
 
 export function generateClassNames(props: CommonProps): string {
   const { margin, padding, height, width } = props;
