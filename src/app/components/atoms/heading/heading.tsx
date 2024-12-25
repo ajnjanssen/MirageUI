@@ -16,7 +16,7 @@ interface IHeading {
  * @param {string} [props.color="Primary"] - The color of the text, defaults to "Primary".
  * @returns {JSX.Element} The rendered heading element.
  */
-function Heading({ level, text, color = "Primary" }: IHeading) {
+function Heading({ level, text, color = "primary" }: IHeading) {
   const levelClass =
     [
       { level: 1, className: "text-6xl font-bold" },
