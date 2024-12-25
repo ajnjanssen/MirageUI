@@ -9,23 +9,31 @@ export default {
   theme: {
     colors: {
       transparent: "transparent",
-      "base-100": "#0d1117", // Background
-      "base-200": "#161b22", // Secondary background
-      "base-300": "#21262d", // Tertiary background
-      "base-content": "#fff", // Primary text
-      primary: "#1f6feb", // Primary accent
-      secondary: "#8b949e", // Secondary text
-      warning: "#d29922", // Warning
-      error: "#f85149", // Error
-      disabled: "#484f58", // Disabled
+      "base-100": "#f0f4ff", // Light background to complement the soft tones
+      "base-200": "#d9e4ff", // Secondary light tone
+      "base-300": "#b3caff", // Soft blue tertiary background
+      "base-content": "#2c3e50", // Dark text for contrast
+      primary: "#6e8cf7", // Soft accent matching the glow effect
+      secondary: "#a7b8ff", // Subtle secondary for text
+      warning: "#ffae42", // Slightly muted warning tone
+      error: "#f76e6e", // Soft error red
+      disabled: "#a0aec0", // Neutral disabled tone
     },
     extend: {
       boxShadow: {
-        glass: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        glass: "0 8px 30px rgba(174, 194, 224, 0.4)",
+        glow: "0 0 10px rgba(174, 194, 224, 0.8)",
       },
       backdropFilter: {
         none: "none",
-        blur: "blur(10px)",
+        blur: "blur(20px)",
+      },
+      gradientColorStops: {
+        primary: "#6e8cf7",
+        secondary: "#b3caff",
+      },
+      backgroundImage: {
+        "soft-gradient": "linear-gradient(145deg, #d9e4ff, #f0f4ff)",
       },
     },
   },
@@ -41,17 +49,17 @@ export default {
       const newUtilities = {
         ".glass": {
           isolation: "isolate",
-          aspectRatio: "16 / 9",
+          aspectRatio: "auto",
           borderRadius: "1.5rem",
+          backgroundColor: "rgba(255, 255, 255, 0.4)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          boxShadow: "0 8px 30px rgba(174, 194, 224, 0.4)",
+          border: "1px solid rgba(255, 255, 255, 0.4)",
+        },
+        ".glow": {
+          boxShadow: "0 0 10px rgba(174, 194, 224, 0.8)",
           backgroundColor: "rgba(255, 255, 255, 0.2)",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
-          ringWidth: "1px",
-          ringColor: "rgba(0, 0, 0, 0.05)",
-          borderBottomColor: "rgba(255, 255, 255, 0.1)",
-          borderBottom: "4px solid rgba(255, 255, 255, 0.1)",
         },
       };
       addUtilities(newUtilities);

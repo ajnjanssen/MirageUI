@@ -1,4 +1,5 @@
 import React from "react";
+import NavigationBar from "@/app/components/organisms/navigation/bar/navigationBar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,9 +18,10 @@ const Layout: React.FC<LayoutProps> = ({ children, nunito }) => {
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} ${nunito.variable} ${nunito.variable} bg-base-100 antialiased`}
+        className={`${nunito.variable} ${nunito.variable} ${nunito.variable} bg-base-100 relative antialiased`}
       >
-        <div className="relative w-screen h-screen">
+        <NavigationBar />
+        <div className="relative w-screen h-screen pt-24">
           <div className="z-10">{children}</div>
         </div>
       </body>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background: url("https://img.freepik.com/free-psd/3d-rendering-holo-fluid-shapes-icon_23-2151799274.jpg?t=st=1734910845~exp=1734914445~hmac=f70a47625c6c4c45fda9f1ff08417ca544dc78ed4fd9925d50af45d8a1a2fda7&w=1380");
+  background: url("/background-fluid/7549.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
