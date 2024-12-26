@@ -3,6 +3,9 @@ import MegaMenuColumn from "@/app/components/atoms/navigation/megaMenu/megaMenuC
 import GridBox from "@/app/components/templates/grid/GridBox";
 
 interface MegaDropDownProps {
+  title?: string;
+  subTitle?: string;
+
   /**
    * The currently active menu ID.
    */
@@ -32,6 +35,8 @@ const MegaDropDown: React.FC<MegaDropDownProps> = ({
   activeMenu,
   children,
   megaDropDownId,
+  title,
+  subTitle,
 }) => {
   if (activeMenu !== megaDropDownId) {
     return null;
@@ -40,12 +45,8 @@ const MegaDropDown: React.FC<MegaDropDownProps> = ({
   return (
     <div id={megaDropDownId} className="glass !rounded-none">
       <div className="container mx-auto p-6">
-        <h2 className="font-bold text-2xl mb-4">
-          Main Hero Message for the menu section
-        </h2>
-        <p className="mb-8">
-          Sub-hero message, not too long and not too short. Make it just right!
-        </p>
+        <h2 className="font-bold text-2xl mb-4">{title}</h2>
+        <p className="mb-8">{subTitle}</p>
         <GridBox gridTemplateColumns="Col4">{children}</GridBox>
       </div>
     </div>
