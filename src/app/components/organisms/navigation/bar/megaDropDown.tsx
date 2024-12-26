@@ -43,7 +43,7 @@ const MegaDropDown: React.FC<MegaDropDownProps> = ({
   }
 
   return (
-    <div id={megaDropDownId} className="glass !rounded-none">
+    <div id={megaDropDownId} className="glass !rounded-none !border-none">
       <div className="container mx-auto p-6">
         <h2 className="font-bold text-2xl mb-4">{title}</h2>
         <p className="mb-8">{subTitle}</p>

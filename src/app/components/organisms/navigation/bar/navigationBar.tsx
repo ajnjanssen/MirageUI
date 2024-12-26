@@ -34,7 +34,7 @@ const NavigationBar: React.FC = () => {
     <nav className="bg-white text-base-content z-10 absolute top-0 w-full">
       <div className="mx-auto flex justify-between items-center glass !border-none !rounded-none h-24 px-6">
         <Logo />
-        <FlexBox gap="GapX2">
+        <FlexBox height="HFull" gap="GapX2">
           <ListItems
             listItemTitle="Hover"
             dropDownId="home"
@@ -62,7 +62,7 @@ const NavigationBar: React.FC = () => {
         </FlexBox>
       </div>
       <div
-        onMouseEnter={() => handleMouseEnter("test")}
+        onMouseEnter={() => handleMouseEnter("home")}
         onMouseLeave={handleMouseLeave}
       >
         <MegaDropDown
@@ -75,7 +75,11 @@ const NavigationBar: React.FC = () => {
           <MegaMenuColumn />
           <MegaMenuColumn />
         </MegaDropDown>
-
+      </div>
+      <div
+        onMouseEnter={() => handleMouseEnter("products")}
+        onMouseLeave={handleMouseLeave}
+      >
         <MegaDropDown
           title="Products"
           subTitle="lorem ipsum...
@@ -88,7 +92,11 @@ const NavigationBar: React.FC = () => {
           <MegaMenuColumn />
           <MegaMenuColumn />
         </MegaDropDown>
-
+      </div>
+      <div
+        onMouseEnter={() => handleMouseEnter("services")}
+        onMouseLeave={handleMouseLeave}
+      >
         <MegaDropDown
           title="Services"
           subTitle="lorem ipsum..."
