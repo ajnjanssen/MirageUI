@@ -10,10 +10,8 @@ interface ListItemsProps {
 
 const ListItems: React.FC<ListItemsProps> = ({
   listItemTitle,
-  children,
   dropDownId,
   toggleMenu,
-  activeMenu,
 }) => {
   const [isClient, setIsClient] = useState(false);
 

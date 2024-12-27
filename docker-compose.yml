@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -12,3 +10,4 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+    command: yarn dev

@@ -36,7 +36,7 @@ const NavigationBar: React.FC = () => {
         <Logo />
         <FlexBox height="HFull" gap="GapX2">
           <ListItems
-            listItemTitle="Hover"
+            listItemTitle="Hi"
             dropDownId="home"
             toggleMenu={toggleMenu}
             activeMenu={activeMenu}

@@ -5,7 +5,7 @@ import { TextColor } from "@/app/enums/text/TextColor";
 import { TextLeading } from "@/app/enums/text/TextLeading";
 import { TextSize } from "@/app/enums/text/TextSize";
 import { Margin, Padding, Height, Width } from "@/app/enums";
-import React from "react";
+import React from "react";  
 import { TextProps } from "@/app/types/common/text/TextProps";
 import { CommonProps } from "@/app/types/common/commonProps";
 

@@ -1,6 +1,7 @@
 import { CommonProps } from "@/app/types/common/commonProps";
 import React from "react";
 import { Margin, Padding, Height, Width } from "@/app/enums";
+import Image from 'next/image';
 
 interface LogoProps extends CommonProps {
   image?: string;
@@ -17,8 +18,7 @@ const Logo: React.FC<LogoProps> = ({
   width,
   height,
   margin,
-  padding,
-  ...props
+  padding
 }) => {
   const commonClasses = `${margin ? Margin[margin] : ""} ${
     padding ? Padding[padding] : ""
@@ -29,7 +29,12 @@ const Logo: React.FC<LogoProps> = ({
       className={`block p-4 lg:p-6 text-xl text-blue-600 font-bold ${commonClasses}`}
     >
       {image ? (
-        <img src={image} alt={alt} width={width} height={height} />
+        <Image 
+          src={image} 
+          alt={alt?.toString() || "default alt text"} 
+          width={width ? parseInt(Width[width].replace('w-', '')) : undefined} 
+          height={height ? parseInt(Height[height].replace('h-', '')) : undefined} 
+        />
       ) : (
         <svg
           id="logo-79"
