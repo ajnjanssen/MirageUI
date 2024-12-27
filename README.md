@@ -25,42 +25,118 @@ MirageUI offers a wide range of UI components, including buttons, containers, fo
 
 ## Getting Started
 
+This updated `README.md` includes instructions for running the project with Docker.
+This updated `README.md` includes instructions for running the project with Docker.
+
+AJN-Exact: No update the readme for the docker part
+
+GitHub Copilot: Sure, here is the updated 
+
+README.md
+
+ with the Docker installation instructions:
+
+```markdown
 ### Installation
 
 To install MirageUI, clone the repository and navigate to the project directory:
 
-````bash
+```bash
 git clone https://github.com/yourusername/mirageui.git
 cd mirageui
-Running the Project
+```
+
+### Running the Project
+
 To run the project locally, use the following commands:
 
-bash```
+```bash
 npm install
 npm run dev
-````
+```
 
-## Usage
+### Running the Project with Docker
+
+To run the project using Docker, follow these steps:
+
+1. **Create a Dockerfile**:
+
+Create a 
+
+Dockerfile
+
+ in the root of your project with the following content:
+
+```Dockerfile
+FROM node:18
+
+WORKDIR /app
+COPY package*.json ./
+RUN yarn install
+COPY . .
+EXPOSE 3000
+CMD ["yarn", "dev"]
+```
+
+2. **Create a 
+
+docker-compose.yml
+
+ file**:
+
+Create a 
+
+docker-compose.yml
+
+ file in the root of your project with the following content:
+
+```yaml
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: yarn dev
+```
+
+3. **Build and run the Docker container**:
+
+Use the following commands to build and run the Docker container:
+
+```bash
+docker-compose down
+docker-compose up --build
+```
+
+This will start the application in development mode with hot reloading enabled. Any changes you make to the files in your local project directory will be reflected inside the Docker container.
+
+4. **Access the application**:
+
+Open your browser and navigate to `http://localhost:3000` to access the application.
+
+### Usage
 
 Here is a basic example of how to use MirageUI components in your React application:
 
 ```jsx
-import React from "react";
-import { Button, Container } from "mirageui";
-
-function App() {
-  return (
-    <Container>
-      <Button
-        text="Click Me"
-        type="primary"
-        onClick={() => alert("Button Clicked!")}
-      />
-    </Container>
-  );
-}
-
-export default App;
+    <SectionHeader
+      width="w-full"
+      headerText="Library"
+      headerSize={1}
+      headerColor="primary"
+      subText="This is the library page"
+      textColor="secondary"
+      textSize="large"
+      textLeading="relaxed"
+      container
+    />
 ```
 
 ### Contributing
@@ -84,3 +160,5 @@ export default App;
 MirageUI is licensed under the MIT License.
 
 &copy; 2024 MirageUI. All rights reserved.
+
+
