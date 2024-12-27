@@ -1,71 +1,75 @@
 # MirageUI
 
-Welcome to **MirageUI**, a comprehensive collection of user interface components designed specifically for React applications. Our goal is to provide developers with a robust and versatile toolkit to build modern and visually appealing web applications with ease.
+Welcome to **MirageUI**, a comprehensive library of user interface components designed specifically for React applications. Our goal is to empower developers with a robust, flexible, and visually appealing toolkit for building modern web applications effortlessly.
+
+---
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+  - [Using Docker](#using-docker)
 - [Usage](#usage)
 - [Contributing](#contributing)
+  - [Contribution Guidelines](#contribution-guidelines)
 - [License](#license)
+
+---
 
 ## Introduction
 
-MirageUI offers a wide range of UI components, including buttons, containers, forms, and more. Each component is built with flexibility and customization in mind, ensuring that you can tailor them to fit the unique needs of your project.
+MirageUI provides an extensive range of UI components, such as buttons, forms, containers, and more. Designed with customization and flexibility in mind, each component ensures seamless integration into your project while maintaining a modern and accessible design.
+
+---
 
 ## Features
 
-- **Modern and sleek design:** Enhance the visual appeal of your applications.
-- **Highly customizable components:** Tailor each component to fit your needs.
-- **Built with TypeScript:** Enjoy type safety and improved development experience.
-- **Responsive and accessible:** Create applications that work well on all devices and for all users.
-- **Seamless integration with React:** Easy to integrate into your React projects.
+- **Modern Design:** Enhance your applications with a clean and contemporary look.
+- **Customizable Components:** Tailor components to suit your specific needs effortlessly.
+- **TypeScript Support:** Enjoy type safety and an enhanced development experience.
+- **Responsive and Accessible:** Ensure usability across devices and for all users.
+- **Seamless React Integration:** Easily add MirageUI components to your React projects.
 
-## Getting Started
+---
 
-This updated `README.md` includes instructions for running the project with Docker.
-This updated `README.md` includes instructions for running the project with Docker.
+## Installation
 
-AJN-Exact: No update the readme for the docker part
-
-GitHub Copilot: Sure, here is the updated 
-
-README.md
-
- with the Docker installation instructions:
-
-```markdown
-### Installation
-
-To install MirageUI, clone the repository and navigate to the project directory:
+To get started with MirageUI, clone the repository and navigate to the project directory:
 
 ```bash
 git clone https://github.com/yourusername/mirageui.git
 cd mirageui
 ```
 
-### Running the Project
-
-To run the project locally, use the following commands:
+Install the dependencies:
 
 ```bash
 npm install
+```
+
+---
+
+## Running the Project
+
+### Locally
+
+To run the project locally, use the following command:
+
+```bash
 npm run dev
 ```
 
-### Running the Project with Docker
+The application will be available at `http://localhost:3000`.
+
+### Using Docker
 
 To run the project using Docker, follow these steps:
 
-1. **Create a Dockerfile**:
+#### 1. Create a `Dockerfile`
 
-Create a 
-
-Dockerfile
-
- in the root of your project with the following content:
+Create a `Dockerfile` in the root of your project with the following content:
 
 ```Dockerfile
 FROM node:18
@@ -78,17 +82,9 @@ EXPOSE 3000
 CMD ["yarn", "dev"]
 ```
 
-2. **Create a 
+#### 2. Create a `docker-compose.yml` file
 
-docker-compose.yml
-
- file**:
-
-Create a 
-
-docker-compose.yml
-
- file in the root of your project with the following content:
+Create a `docker-compose.yml` file in the root of your project with the following content:
 
 ```yaml
 services:
@@ -106,59 +102,66 @@ services:
     command: yarn dev
 ```
 
-3. **Build and run the Docker container**:
+#### 3. Build and Run the Docker Container
 
-Use the following commands to build and run the Docker container:
+Use the following commands to build and start the Docker container:
 
 ```bash
 docker-compose down
 docker-compose up --build
 ```
 
-This will start the application in development mode with hot reloading enabled. Any changes you make to the files in your local project directory will be reflected inside the Docker container.
+This will start the application in development mode with hot reloading enabled. Changes made to your local files will automatically reflect in the running container.
 
-4. **Access the application**:
+#### 4. Access the Application
 
-Open your browser and navigate to `http://localhost:3000` to access the application.
+Open your browser and navigate to `http://localhost:3000`.
 
-### Usage
+---
+
+## Usage
 
 Here is a basic example of how to use MirageUI components in your React application:
 
 ```jsx
-    <SectionHeader
-      width="w-full"
-      headerText="Library"
-      headerSize={1}
-      headerColor="primary"
-      subText="This is the library page"
-      textColor="secondary"
-      textSize="large"
-      textLeading="relaxed"
-      container
-    />
+import { SectionHeader } from 'mirageui';
+
+const LibraryPage = () => (
+  <SectionHeader
+    width="w-full"
+    headerText="Library"
+    headerSize={1}
+    headerColor="primary"
+    subText="This is the library page"
+    textColor="secondary"
+    textSize="large"
+    textLeading="relaxed"
+    container
+  />
+);
+
+export default LibraryPage;
 ```
 
-### Contributing
+---
 
-> We welcome contributions from the community! If you encounter any issues or have suggestions for improvements, please feel free to submit an issue or a pull request on our GitHub repository.
+## Contributing
 
-## Contribution Guidelines
+We welcome contributions from the community! If you encounter issues or have ideas for new features, feel free to open an issue or submit a pull request on GitHub.
 
-- Fork the repository.
+### Contribution Guidelines
 
-- Create a new branch with your feature or bugfix.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear and concise messages.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository.
 
-- Make your changes and commit them.
+---
 
-- Push your changes to your forked repository.
-
-- Submit a pull request to the main repository.
-
-### License
+## License
 
 MirageUI is licensed under the MIT License.
 
 &copy; 2024 MirageUI. All rights reserved.
-
 
