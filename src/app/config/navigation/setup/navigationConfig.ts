@@ -16,6 +16,12 @@ export interface InnerListItemConfig {
    * @type {string}
    */
   padding?: string;
+
+  /**
+   * The optional link for the item.
+   * @type {string}
+   */
+  link?: string;
 }
 
 /**
@@ -47,22 +53,49 @@ export interface NavigationItem {
    * The optional children items.
    * @type {InnerListItemConfig[]}
    */
+
+  link?: string;
   children?: InnerListItemConfig[];
 }
 
 /**
  * The navigation items configuration.
- * @type {NavigationItem[]}
+      { text: "General settings", icon: "settings", padding: "Px4", link: "/setup/general-settings" },
  */
 export const navigationItems: NavigationItem[] = [
   {
     text: "Setup",
     children: [
-      { text: "General settings", icon: "settings", padding: "Px4" },
-      { text: "Theme settings", icon: "contrast", padding: "Px4" },
-      { text: "Database Provider", icon: "database", padding: "Px4" },
-      { text: "Environmental variables", icon: "variable_add", padding: "Px4" },
-      { text: "Authentication", icon: "lock_open", padding: "Px4" },
+      {
+        text: "General settings",
+        icon: "settings",
+        padding: "Px4",
+        link: "/setup/general-settings",
+      },
+      {
+        text: "Theme settings",
+        icon: "contrast",
+        padding: "Px4",
+        link: "/setup/theme-settings",
+      },
+      {
+        text: "Database Provider",
+        icon: "database",
+        padding: "Px4",
+        link: "/setup/database-provider",
+      },
+      {
+        text: "Environmental variables",
+        icon: "variable_add",
+        padding: "Px4",
+        link: "/setup/environmental-variables",
+      },
+      {
+        text: "Authentication",
+        icon: "lock_open",
+        padding: "Px4",
+        link: "/setup/authentication",
+      },
     ],
   },
 ];

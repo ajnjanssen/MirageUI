@@ -21,10 +21,10 @@ export default function RootLayout({
           gridAutoFlow="ColDense"
         >
           <GridInner colSpan="ColSpan1" width="w-full">
-            <VerticalNavigation items={navigationItems} />
+            <VerticalNavigation items={navigationItems as any} />
           </GridInner>
 
-          <GridInner colSpan="ColSpan3">
+          <GridInner colSpan="ColSpan3" width="w-full">
             <Container padding="P8" glass>
               <Container padding="P8" glass>
                 {children}

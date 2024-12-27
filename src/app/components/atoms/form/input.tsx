@@ -19,6 +19,6 @@ export const Input: React.FC<InputProps> = ({
     id={id}
     type={type}
     placeholder={placeholder}
-    className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${className}`}
+    className={`shadow appearance-none border-base-200 rounded w-full py-2 px-3 text-gray-700 leading-tight ${className}`}
   />
 );

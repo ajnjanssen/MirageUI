@@ -9,7 +9,7 @@ interface VerticalNavigationProps {
   /**
    * The items to be displayed in the navigation list.
    */
-  items: NavigationItem[];
+  items: [];
 }
 
 /**

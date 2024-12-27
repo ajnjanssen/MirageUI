@@ -2,7 +2,10 @@ import InnerListItem from "@/app/components/molecules/navigation/vertical/innerL
 import ListItem from "@/app/components/molecules/navigation/vertical/listItem";
 import Container from "@/app/components/templates/container/container";
 import FlexBox from "@/app/components/templates/flex/FlexBox";
-import { NavigationItem } from "@/app/config/navigation/navigationConfig";
+import {
+  InnerListItemConfig,
+  NavigationItem,
+} from "@/app/config/navigation/navigationConfig";
 import React, { JSX, useState } from "react";
 
 interface NavigationListItemsProps {
@@ -35,14 +38,17 @@ function NavigationListItems({ items }: NavigationListItemsProps): JSX.Element {
             onToggle={() => handleToggle(index)}
           >
             {item.children &&
-              item.children.map((child: NavigationItem, childIndex: number) => (
-                <InnerListItem
-                  key={childIndex}
-                  text={child.text}
-                  icon={child.icon}
-                  padding="P2"
-                />
-              ))}
+              item.children.map(
+                (child: InnerListItemConfig, childIndex: number) => (
+                  <InnerListItem
+                    key={childIndex}
+                    text={child.text}
+                    icon={child.icon}
+                    padding="P2"
+                    link={child.link}
+                  />
+                )
+              )}
           </ListItem>
         ))}
       </FlexBox>
