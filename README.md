@@ -46,7 +46,7 @@ cd mirageui
 Install the dependencies:
 
 ```bash
-npm install
+yarn install
 ```
 
 ---
@@ -58,7 +58,7 @@ npm install
 To run the project locally, use the following command:
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 The application will be available at `http://localhost:3000`.
