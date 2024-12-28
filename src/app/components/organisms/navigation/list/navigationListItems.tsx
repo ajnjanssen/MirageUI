@@ -10,6 +10,7 @@ import React, { JSX, useState } from "react";
 
 interface NavigationListItemsProps {
   items: NavigationItem[];
+  collapsable?: boolean;
 }
 
 /**
@@ -19,11 +20,13 @@ interface NavigationListItemsProps {
  * @param {Array} props.items - The list of items to be rendered.
  * @returns {JSX.Element} The rendered NavigationListItems component.
  */
-function NavigationListItems({ items }: NavigationListItemsProps): JSX.Element {
+function NavigationListItems({ items, collapsable = true }: NavigationListItemsProps): JSX.Element {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    if (collapsable) {
+      setOpenIndex(openIndex === index ? null : index);
+    }
   };
 
   return (
@@ -33,8 +36,8 @@ function NavigationListItems({ items }: NavigationListItemsProps): JSX.Element {
           <ListItem
             key={index}
             text={item.text}
-            collapsible={!!item.children}
-            isOpen={openIndex === index}
+            collapsible={collapsable && !!item.children}
+            isOpen={collapsable ? openIndex === index : true}
             onToggle={() => handleToggle(index)}
           >
             {item.children &&

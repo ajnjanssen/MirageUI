@@ -5,6 +5,7 @@ import ListItems from "@/app/components/molecules/navigation/horizontal/listItem
 import MegaDropDown from "./megaDropDown";
 import MegaMenuColumn from "@/app/components/atoms/navigation/megaMenu/megaMenuColumn";
 import FlexBox from "@/app/components/templates/flex/FlexBox";
+import H4 from "@/app/components/atoms/text/heading/H4";
 
 const NavigationBar: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -33,7 +34,8 @@ const NavigationBar: React.FC = () => {
   return (
     <nav className="bg-white text-base-content z-10 absolute top-0 w-full">
       <div className="mx-auto flex justify-between items-center glass !border-none !rounded-none h-24 px-6">
-        <Logo />
+        {/* <Logo /> */}
+        <H4 fontWeight="medium">Mirage<span className="underline font-black">UI</span></H4>
         <FlexBox height="HFull" gap="GapX2">
           <ListItems
             listItemTitle="Hi"

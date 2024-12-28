@@ -7,7 +7,7 @@ function page() {
   return (
     <Container>
       <FlexBox width="w-full" height="HFull" flexDirection="Column" gap="Gap16">
-        <H1>Theme settings</H1>
+        <H1>Roles</H1>
       </FlexBox>
     </Container>
   );

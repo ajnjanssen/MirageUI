@@ -8,35 +8,33 @@ import { Input } from "@/app/components/atoms/form/input";
 function page() {
   return (
     <Form className="p-4" margin="MxAuto" width="w-full" height="HFull">
-      <H2>Authentication</H2>
+      <H2>AWS</H2>
       <GridBox gridTemplateColumns="Col2" justifyItems="Stretch">
-        <Label htmlFor="NEXT_PUBLIC_AUTH0_DOMAIN">
-          NEXT_PUBLIC_AUTH0_DOMAIN
-        </Label>
+        <Label htmlFor="AWS_ACCESS_KEY_ID">AWS_ACCESS_KEY_ID</Label>
         <Input
-          id="NEXT_PUBLIC_AUTH0_DOMAIN"
+          id="AWS_ACCESS_KEY_ID"
           type="text"
-          placeholder="your_auth0_domain"
+          placeholder="your_aws_access_key_id"
         />
       </GridBox>
       <GridBox gridTemplateColumns="Col2" justifyItems="Stretch">
-        <Label htmlFor="NEXT_PUBLIC_AUTH0_CLIENT_ID">
-          NEXT_PUBLIC_AUTH0_CLIENT_ID
-        </Label>
+        <Label htmlFor="AWS_SECRET_ACCESS_KEY">AWS_SECRET_ACCESS_KEY</Label>
         <Input
-          id="NEXT_PUBLIC_AUTH0_CLIENT_ID"
+          id="AWS_SECRET_ACCESS_KEY"
           type="text"
-          placeholder="your_auth0_client_id"
+          placeholder="your_aws_secret_access_key"
         />
       </GridBox>
       <GridBox gridTemplateColumns="Col2" justifyItems="Stretch">
-        <Label htmlFor="NEXT_PUBLIC_AUTH0_CLIENT_SECRET">
-          NEXT_PUBLIC_AUTH0_CLIENT_SECRET
-        </Label>
+        <Label htmlFor="AWS_REGION">AWS_REGION</Label>
+        <Input id="AWS_REGION" type="text" placeholder="your_aws_region" />
+      </GridBox>
+      <GridBox gridTemplateColumns="Col2" justifyItems="Stretch">
+        <Label htmlFor="AWS_S3_BUCKET">AWS_S3_BUCKET</Label>
         <Input
-          id="NEXT_PUBLIC_AUTH0_CLIENT_SECRET"
+          id="AWS_S3_BUCKET"
           type="text"
-          placeholder="your_auth0_client_secret"
+          placeholder="your_s3_bucket_name"
         />
       </GridBox>
     </Form>
