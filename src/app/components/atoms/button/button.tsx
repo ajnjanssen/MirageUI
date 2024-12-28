@@ -5,8 +5,10 @@ import { generateButtonClass } from "@/app/utils/functions/components/button/but
 
 interface ButtonProps {
   text: string;
-  type: ButtonColor;
+  color: keyof typeof ButtonColor;
+  type: "button" | "submit" | "reset";
   disabled?: boolean;
+  onClick?: (e: React.FormEvent<Element>) => Promise<void>;
 }
 
 /**
@@ -17,11 +19,16 @@ interface ButtonProps {
  * @param {string} props.type - The type of the button (e.g., "primary", "secondary").
  * @param {boolean} [props.disabled=false] - Whether the button is disabled.
  */
-const Button: React.FC<ButtonProps> = ({ text, type, disabled = false }) => {
-  const buttonClass = generateButtonClass(type, disabled);
+const Button: React.FC<ButtonProps> = ({
+  text,
+  type,
+  color,
+  disabled = false,
+}) => {
+  const buttonClass = generateButtonClass(ButtonColor[color], disabled);
 
   return (
-    <button className={buttonClass} disabled={disabled}>
+    <button type={type} className={buttonClass} disabled={disabled}>
       {text}
     </button>
   );

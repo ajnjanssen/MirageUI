@@ -10,6 +10,7 @@ interface FormProps extends CommonProps, FlexProps {
   padding?: keyof typeof Padding;
   height?: keyof typeof Height;
   width?: keyof typeof Width;
+  onSubmit?: (e: React.FormEvent) => void;
 }
 
 /**

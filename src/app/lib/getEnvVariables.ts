@@ -1,0 +1,44 @@
+// app/lib/getEnvVariables.ts
+export function getEnvVariables() {
+  return {
+    projectName: process.env.NEXT_PUBLIC_PROJECT_NAME || "",
+    logLevel: process.env.NEXT_PUBLIC_LOG_LEVEL || "",
+    sessionTimeout: process.env.NEXT_PUBLIC_SESSION_TIMEOUT || "",
+    maxUploadSize: process.env.NEXT_PUBLIC_MAX_UPLOAD_SIZE || "",
+    allowedOrigins: process.env.NEXT_PUBLIC_ALLOWED_ORIGINS || "",
+    NODE_ENV: process.env.NODE_ENV || "development",
+    PORT: process.env.PORT || "3000",
+    NEXT_PUBLIC_FIREBASE_API_KEY:
+      process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "",
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN:
+      process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "",
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID:
+      process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "",
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET:
+      process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "",
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID:
+      process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "",
+    NEXT_PUBLIC_FIREBASE_APP_ID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "",
+    NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID:
+      process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "",
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+    NEXT_PUBLIC_SUPABASE_ANON_KEY:
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "",
+    AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID || "",
+    AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY || "",
+    AWS_REGION: process.env.AWS_REGION || "",
+    AWS_S3_BUCKET: process.env.AWS_S3_BUCKET || "",
+    DATABASE_URL: process.env.DATABASE_URL || "",
+    NEXT_PUBLIC_AUTH0_DOMAIN: process.env.NEXT_PUBLIC_AUTH0_DOMAIN || "",
+    NEXT_PUBLIC_AUTH0_CLIENT_ID: process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID || "",
+    NEXT_PUBLIC_AUTH0_CLIENT_SECRET:
+      process.env.NEXT_PUBLIC_AUTH0_CLIENT_SECRET || "",
+    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY:
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
+    NEXT_PUBLIC_STRIPE_API_KEY: process.env.NEXT_PUBLIC_STRIPE_API_KEY || "",
+    NEXT_PUBLIC_GOOGLE_ANALYTICS_ID:
+      process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || "",
+    NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || "",
+    NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN || "",
+  };
+}
