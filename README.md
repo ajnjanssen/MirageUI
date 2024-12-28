@@ -2,6 +2,8 @@
 
 Welcome to **MirageUI**, a comprehensive library of user interface components designed specifically for React applications. Our goal is to empower developers with a robust, flexible, and visually appealing toolkit for building modern web applications effortlessly.
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/ajnjanssen)
+
 ---
 
 ## Table of Contents
