@@ -1,19 +1,17 @@
-import React from "react";
+import React, { Children } from "react";
 
-function MegaMenuColumn() {
+interface MegaMenuColumnProps {
+  title?: string;
+  subtitle?: string;
+  children: React.ReactNode;
+}
+
+function MegaMenuColumn({ title, children, subtitle }: MegaMenuColumnProps) {
   return (
-    <div className="w-full">
-      <h3 className="font-bold text-xl mb-3">Heading 2</h3>
-      <p className="text-sm text-gray-100 mb-4">
-        Prioritize these line items game-plan draw a line in the sand come up
-        with something buzzworthy UX upstream selling.
-      </p>
-      <a
-        href="#"
-        className="text-blue-300 hover:text-white border-b-2 border-blue-300"
-      >
-        Find out more...
-      </a>
+    <div className="w-full flex flex-col gap-4">
+      <h3 className="font-bold text-xl mb-3">{title}</h3>
+      <p className="text-sm text-gray-100 mb-4">{subtitle}</p>
+      {children}
     </div>
   );
 }

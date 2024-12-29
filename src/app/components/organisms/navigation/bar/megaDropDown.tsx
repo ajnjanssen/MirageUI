@@ -47,7 +47,9 @@ const MegaDropDown: React.FC<MegaDropDownProps> = ({
       <div className="container mx-auto p-6">
         <h2 className="font-bold text-2xl mb-4">{title}</h2>
         <p className="mb-8">{subTitle}</p>
-        <GridBox gridTemplateColumns="Col4">{children}</GridBox>
+        <GridBox gridTemplateColumns="Col4" gap="Gap8">
+          {children}
+        </GridBox>
       </div>
     </div>
   );

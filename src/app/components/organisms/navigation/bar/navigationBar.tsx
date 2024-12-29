@@ -6,6 +6,8 @@ import MegaDropDown from "./megaDropDown";
 import MegaMenuColumn from "@/app/components/atoms/navigation/megaMenu/megaMenuColumn";
 import FlexBox from "@/app/components/templates/flex/FlexBox";
 import H4 from "@/app/components/atoms/text/heading/H4";
+import LinkComponent from "@/app/components/atoms/navigation/link";
+import P from "@/app/components/atoms/text/text/p";
 
 const NavigationBar: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -35,80 +37,58 @@ const NavigationBar: React.FC = () => {
     <nav className="bg-white text-base-content z-10 absolute top-0 w-full">
       <div className="mx-auto flex justify-between items-center glass !border-none !rounded-none h-24 px-6">
         {/* <Logo /> */}
-        <H4 fontWeight="medium">Mirage<span className="underline font-black">UI</span></H4>
+        <H4 fontWeight="medium">
+          Mirage<span className="underline font-black">UI</span>
+        </H4>
         <FlexBox height="HFull" gap="GapX2">
           <ListItems
-            listItemTitle="Hi"
-            dropDownId="home"
+            listItemTitle="Configuration"
+            dropDownId="Configuration"
             toggleMenu={toggleMenu}
             activeMenu={activeMenu}
-          >
-            Home
-          </ListItems>
-          <ListItems
-            listItemTitle="Products"
-            dropDownId="products"
-            toggleMenu={toggleMenu}
-            activeMenu={activeMenu}
-          >
-            Home
-          </ListItems>
-          <ListItems
-            listItemTitle="Services"
-            dropDownId="services"
-            toggleMenu={toggleMenu}
-            activeMenu={activeMenu}
-          >
-            Home
-          </ListItems>
+            children={undefined}
+          />
         </FlexBox>
       </div>
       <div
         onMouseEnter={() => handleMouseEnter("home")}
         onMouseLeave={handleMouseLeave}
+        className="w-full h-full"
       >
         <MegaDropDown
-          title="Home"
-          megaDropDownId="home"
+          title="Configuration"
+          megaDropDownId="Configuration"
           activeMenu={activeMenu}
         >
-          <MegaMenuColumn />
-          <MegaMenuColumn />
-          <MegaMenuColumn />
-          <MegaMenuColumn />
-        </MegaDropDown>
-      </div>
-      <div
-        onMouseEnter={() => handleMouseEnter("products")}
-        onMouseLeave={handleMouseLeave}
-      >
-        <MegaDropDown
-          title="Products"
-          subTitle="lorem ipsum...
-        "
-          megaDropDownId="products"
-          activeMenu={activeMenu}
-        >
-          <MegaMenuColumn />
-          <MegaMenuColumn />
-          <MegaMenuColumn />
-          <MegaMenuColumn />
-        </MegaDropDown>
-      </div>
-      <div
-        onMouseEnter={() => handleMouseEnter("services")}
-        onMouseLeave={handleMouseLeave}
-      >
-        <MegaDropDown
-          title="Services"
-          subTitle="lorem ipsum..."
-          megaDropDownId="services"
-          activeMenu={activeMenu}
-        >
-          <MegaMenuColumn />
-          <MegaMenuColumn />
-          <MegaMenuColumn />
-          <MegaMenuColumn />
+          <MegaMenuColumn title="Configuration">
+            <P textLeading="Relaxed" textSize="xl">
+              The configuration section contains all the settings and
+              configurations for the MirageUI application.
+            </P>
+          </MegaMenuColumn>
+          <MegaMenuColumn title="Setup">
+            <LinkComponent link="/setup" linkTitle="Setup" />
+            <LinkComponent
+              link="/setup/general-settings"
+              linkTitle="General settings"
+            />
+            <LinkComponent
+              link="/setup/theme-settings"
+              linkTitle="Theme settings"
+            />
+            <LinkComponent
+              link="/setup/database-provider"
+              linkTitle="Database provider"
+            />
+            <LinkComponent
+              link="/setup/environmental-variables"
+              linkTitle="Environmental variables"
+            />
+            <LinkComponent
+              link="/setup/authentication"
+              linkTitle="Authentication"
+            />
+          </MegaMenuColumn>
         </MegaDropDown>
       </div>
     </nav>
