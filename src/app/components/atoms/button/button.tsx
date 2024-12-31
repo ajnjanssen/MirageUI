@@ -2,12 +2,15 @@
 import React from "react";
 import { ButtonColor } from "@/app/enums/button/ButtonColor";
 import { generateButtonClass } from "@/app/utils/functions/components/button/buttonClassGenerator";
+import { openModal } from "@/app/utils/functions/components/button/openModal";
 
 interface ButtonProps {
   text: string;
   color: keyof typeof ButtonColor;
   type: "button" | "submit" | "reset";
   disabled?: boolean;
+  shouldOpenModal?: boolean;
+  modalId?: string;
   onClick?: (e: React.FormEvent<Element>) => Promise<void>;
 }
 
@@ -24,11 +27,29 @@ const Button: React.FC<ButtonProps> = ({
   type,
   color,
   disabled = false,
+  shouldOpenModal = false,
+  modalId,
+  onClick,
 }) => {
   const buttonClass = generateButtonClass(ButtonColor[color], disabled);
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (shouldOpenModal) {
+      e.preventDefault();
+      openModal(shouldOpenModal, modalId);
+    }
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
-    <button type={type} className={buttonClass} disabled={disabled}>
+    <button
+      type={type}
+      className={buttonClass}
+      disabled={disabled}
+      onClick={handleClick}
+    >
       {text}
     </button>
   );

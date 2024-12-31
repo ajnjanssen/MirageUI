@@ -16,12 +16,12 @@ export default {
       primary: "#6e8cf7", // Soft accent matching the glow effect
       secondary: "#a7b8ff", // Subtle secondary for text
       warning: "#ffae42", // Slightly muted warning tone
-      error: "#f76e6e", // Soft error red
+      error: "#ff000d", // Soft error red
       disabled: "#a0aec0", // Neutral disabled tone
     },
     extend: {
       boxShadow: {
-        glass: "0 8px 30px rgba(174, 194, 224, 0.4)",
+        glass: "0 8px 30px hsla(357, 100.00%, 50.00%, 0.40)",
         glow: "0 0 10px rgba(174, 194, 224, 0.8)",
       },
       backdropFilter: {

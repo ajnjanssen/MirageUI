@@ -13,7 +13,7 @@ export const generateButtonClass = (
   disabled: boolean
 ): string => {
   const baseClass =
-    "py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 glass";
+    "py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-offset-2";
   const typeClass = {
     [ButtonColor.Primary]:
       "bg-primary text-white hover:bg-primary-dark focus:ring-primary",
