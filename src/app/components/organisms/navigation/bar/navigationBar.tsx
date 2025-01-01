@@ -40,7 +40,7 @@ const NavigationBar: React.FC = () => {
         <H4 fontWeight="medium">
           Mirage<span className="underline font-black">UI</span>
         </H4>
-        <FlexBox height="HFull" gap="GapX2">
+        <FlexBox height="HFull">
           <ListItems
             listItemTitle="Configuration"
             dropDownId="Configuration"
@@ -48,16 +48,65 @@ const NavigationBar: React.FC = () => {
             activeMenu={activeMenu}
             children={undefined}
           />
+          <ListItems
+            listItemTitle="Library"
+            dropDownId="Library"
+            toggleMenu={toggleMenu}
+            activeMenu={activeMenu}
+            children={undefined}
+          />
         </FlexBox>
       </div>
       <div
-        onMouseEnter={() => handleMouseEnter("home")}
+        onMouseEnter={() => handleMouseEnter("Configuration")}
         onMouseLeave={handleMouseLeave}
-        className="w-full h-full"
+        className="relative"
       >
         <MegaDropDown
           title="Configuration"
           megaDropDownId="Configuration"
+          activeMenu={activeMenu}
+        >
+          <MegaMenuColumn title="Configuration">
+            <P textLeading="Relaxed" textSize="xl">
+              The configuration section contains all the settings and
+              configurations for the MirageUI application.
+            </P>
+          </MegaMenuColumn>
+          <MegaMenuColumn title="Setup">
+            <LinkComponent link="/setup" linkTitle="Setup" />
+            <LinkComponent
+              link="/setup/general-settings"
+              linkTitle="General settings"
+            />
+            <LinkComponent
+              link="/setup/theme-settings"
+              linkTitle="Theme settings"
+            />
+            <LinkComponent
+              link="/setup/database-provider"
+              linkTitle="Database provider"
+            />
+            <LinkComponent
+              link="/setup/environmental-variables"
+              linkTitle="Environmental variables"
+            />
+            <LinkComponent
+              link="/setup/authentication"
+              linkTitle="Authentication"
+            />
+          </MegaMenuColumn>
+        </MegaDropDown>
+      </div>
+
+      <div
+        onMouseEnter={() => handleMouseEnter("Library")}
+        onMouseLeave={handleMouseLeave}
+        className="relative"
+      >
+        <MegaDropDown
+          title="Library"
+          megaDropDownId="Library"
           activeMenu={activeMenu}
         >
           <MegaMenuColumn title="Configuration">
