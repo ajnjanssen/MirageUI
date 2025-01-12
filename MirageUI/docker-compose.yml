@@ -1,12 +1,12 @@
 services:
   app:
     build:
-      context: ./MirageUI
+      context: .
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./MirageUI:/app
+      - .:/app
       - /app/node_modules
     environment:
       - NODE_ENV=development

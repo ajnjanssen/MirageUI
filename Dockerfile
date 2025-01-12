@@ -1,18 +1,14 @@
-# Stage 1: Build the MirageUI project
-FROM node:18 AS build-ui
+FROM node:18
 
-WORKDIR /app
+WORKDIR /node-server
 COPY package*.json ./
 RUN yarn install
 COPY . .
+
+WORKDIR /node-server/client
+RUN yarn install
 RUN yarn build
 
-# Stage 2: Set up the runtime environment
-FROM node:18
-
-WORKDIR /app
-COPY --from=build-ui /app /app
-
-EXPOSE 3000
-
-CMD ["yarn", "dev"]
+WORKDIR /node-server
+EXPOSE 4000
+CMD ["node", "src/server.js"]
