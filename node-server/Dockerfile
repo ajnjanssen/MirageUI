@@ -2,7 +2,7 @@ FROM node:18
 
 WORKDIR /node-server
 COPY package*.json ./
-RUN npm install
+RUN yarn install
 COPY . .
 
 EXPOSE 4000
