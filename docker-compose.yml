@@ -11,3 +11,16 @@ services:
     environment:
       - NODE_ENV=development
     command: yarn dev
+
+  node-server:
+    build:
+      context: ./node-server
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./node-server:/node-server
+      - /node-server/node_modules
+    environment:
+      - NODE_ENV=development
+    command: node src/server.js

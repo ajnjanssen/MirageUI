@@ -3,9 +3,23 @@
 @tailwind utilities;
 
 body {
+  position: relative;
   background: url("/background-fluid/7549.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
+
+/* body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: -1;
+  pointer-events: none;
+  filter: invert(1);
+} */
