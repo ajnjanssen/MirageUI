@@ -1,0 +1,15 @@
+export enum TextLeading {
+  Leading3 = "leading-3",
+  Leading4 = "leading-4",
+  Leading5 = "leading-5",
+  Leading6 = "leading-6",
+  Leading7 = "leading-7",
+  Leading8 = "leading-8",
+  Leading9 = "leading-9",
+  Leading10 = "leading-10",
+  None = "leading-none",
+  Tight = "leading-tight",
+  Relaxed = "leading-relaxed",
+  Loose = "leading-loose",
+  Snug = "leading-snug",
+}

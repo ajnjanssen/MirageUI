@@ -1,0 +1,16 @@
+export enum GridTemplateRows {
+  Rows1 = "grid-rows-1",
+  Rows2 = "grid-rows-2",
+  Rows3 = "grid-rows-3",
+  Rows4 = "grid-rows-4",
+  Rows5 = "grid-rows-5",
+  Rows6 = "grid-rows-6",
+  Rows7 = "grid-rows-7",
+  Rows8 = "grid-rows-8",
+  Rows9 = "grid-rows-9",
+  Rows10 = "grid-rows-10",
+  Rows11 = "grid-rows-11",
+  Rows12 = "grid-rows-12",
+  None = "grid-rows-none",
+  Subgrid = "grid-rows-subgrid",
+}

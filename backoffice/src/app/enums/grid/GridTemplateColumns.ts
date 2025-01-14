@@ -1,0 +1,16 @@
+export enum GridTemplateColumns {
+  Col1 = "grid-cols-1",
+  Col2 = "grid-cols-2",
+  Col3 = "grid-cols-3",
+  Col4 = "grid-cols-4",
+  Col5 = "grid-cols-5",
+  Col6 = "grid-cols-6",
+  Col7 = "grid-cols-7",
+  Col8 = "grid-cols-8",
+  Col9 = "grid-cols-9",
+  Col10 = "grid-cols-10",
+  Col11 = "grid-cols-11",
+  Col12 = "grid-cols-12",
+  None = "grid-cols-none",
+  Subgrid = "grid-cols-subgrid",
+}

@@ -5,12 +5,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - ./MirageUI:/app
-      - /app/node_modules
     environment:
       - NODE_ENV=development
     command: yarn dev
+    develop:
+      watch:
+        - action: sync
+          path: ./MirageUI
+          target: /app
+          ignore:
+            - node_modules/
 
   backoffice:
     build:
@@ -18,13 +22,17 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
-    volumes:
-      - ./backoffice:/backoffice
-      - /backoffice/node_modules
     environment:
       - NODE_ENV=development
       - PORT=3001
     command: yarn dev
+    develop:
+      watch:
+        - action: sync
+          path: ./backoffice
+          target: /backoffice
+          ignore:
+            - node_modules/
 
   node-server:
     build:
@@ -32,9 +40,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4000:4000"
-    volumes:
-      - ./node-server:/node-server
-      - /node-server/node_modules
     environment:
       - NODE_ENV=development
     command: node src/server.js
+    develop:
+      watch:
+        - action: sync
+          path: ./node-server
+          target: /node-server
+          ignore:
+            - node_modules/

@@ -1,0 +1,17 @@
+export { TextAlign } from "./TextAlign";
+export { TextColor } from "./TextColor";
+export { TextSize } from "./TextSize";
+export { TextDecoration } from "./TextDecoration";
+export { TextDecorationColor } from "./TextDecorationColor";
+export { TextDecorationStyle } from "./TextDecorationStyle";
+export { TextDecorationThickness } from "./TextDecorationThickness";
+export { TextHyphens } from "./TextHyphens";
+export { TextIndent } from "./TextIndent";
+export { TextLeading } from "./TextLeading";
+export { TextOverflow } from "./TextOverflow";
+export { TextTransform } from "./TextTransform";
+export { TextUnderLineOffset } from "./TextUnderLineOffset";
+export { TextVerticalAlign } from "./TextVerticalAlign";
+export { TextWhitespace } from "./TextWhitespace";
+export { TextWordBreak } from "./TextWordBreak";
+export { TextWrap } from "./TextWrap";
