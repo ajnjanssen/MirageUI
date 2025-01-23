@@ -1,13 +1,12 @@
 services:
   backoffice:
     build:
-      context: .
+      context: ./backoffice
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
     volumes:
-      - .:/backoffice
-      - /backoffice/node_modules
+      - ./backoffice/src/app/data/types:/backoffice/src/app/data/types
     environment:
       - NODE_ENV=development
     command: yarn dev

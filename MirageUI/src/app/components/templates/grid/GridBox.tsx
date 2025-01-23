@@ -12,7 +12,7 @@ import { Gap } from "@/app/enums/gap/Gap";
 import { JustifyItems } from "@/app/enums/justify/JustifyItems";
 
 interface GridBoxProps extends GridProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 /**

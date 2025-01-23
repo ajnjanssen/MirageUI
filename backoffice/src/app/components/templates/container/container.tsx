@@ -66,7 +66,7 @@ const Container: React.FC<Props> = ({
     <div
       className={`${
         glass ? "glass" : ""
-      } ${combinedClasses} ${commonClasses} ${className}`}
+      } ${combinedClasses} ${commonClasses} ${className} container`}
     >
       {children}
     </div>

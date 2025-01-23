@@ -1,7 +1,7 @@
 import React from "react";
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 /**

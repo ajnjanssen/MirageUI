@@ -9,7 +9,7 @@ import { CommonProps } from "@/app/types/common/commonProps";
 import { Margin, Padding, Height, Width } from "@/app/enums";
 
 interface GridInnerProps extends GridProps, CommonProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   colSpan?: keyof typeof GridColumnStartEnd;
 }
 
