@@ -41,7 +41,7 @@ MirageUI provides an extensive range of UI components, such as buttons, forms, c
 To get started with MirageUI, clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/yourusername/mirageui.git
+git clone https://github.com/ajnjanssen/mirageui.git
 cd mirageui
 ```
 
